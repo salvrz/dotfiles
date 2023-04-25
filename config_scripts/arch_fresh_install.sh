@@ -68,6 +68,17 @@ cp "${config}/xresources-cp" ~/.Xresources
 # }}}
 
 
+# WIFI {{{
+
+  echo ">>>INSTALLING WiFi management system"
+  paru -S networkmanager
+  git clone https://github.com/P3rf/rofi-network-manager.git
+  sudo cp -r rofi-network-manager /opt/
+  rm -rf rofi-network-manager
+
+# }}}
+
+
 # FONTS {{{
     
   echo ">>>INSTALLING IBM Plex Mono and NERDFont Blex"

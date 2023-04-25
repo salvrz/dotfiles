@@ -15,7 +15,7 @@ super + d
     #            -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
 
 super + i
-	~/rofi-network-manager/rofi-network-manager.sh
+	/opt/rofi-network-manager/rofi-network-manager.sh
 
 # show open window
 super + ctrl + d
