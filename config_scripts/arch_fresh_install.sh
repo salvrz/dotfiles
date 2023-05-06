@@ -377,10 +377,16 @@ cp "${config}/xresources-cp" ~/.Xresources
     bspwm_exists=$(which bspwm | grep bspwm)
 
     if [ "$bspwm_exists" ]; then
+      echo ">>>CONFIGURING wallpapers"
+
+      # wallpapers
       cp "${cwd}/images/wallpaper*" ~/Pictures/
       paru -S nitrogen
       nitrogen --no-recurse ~/Pictures/
       cp "${config}/bspwm/bspwmrc" $HOME/.config/bspwm/bspwmrc
+
+      # lock screens
+      sudo cp "${cwd}/.config/slick-greeter-cp" /etc/lightdm/slick-greeter.conf
 
     else
       echo ">>>NOT INSTALLED: bspwm, please install"
