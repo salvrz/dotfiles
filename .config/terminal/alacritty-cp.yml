@@ -68,7 +68,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-window_opacity: 0.2
+window_opacity: 0.5
 
   # Startup Mode (changes require restart)
   #
@@ -280,25 +280,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#76AAB6'
-    red:     '#47624E'
-    green:   '#FF006F'
-    yellow:  '#76AAB6'
-    blue:    '#FF006F'
-    magenta: '#4A8089'
-    cyan:    '#00CDC1'
-    white:   '#76AAB6'
+    black:   '#76AAB6'  # blue-grey
+    red:     '#47624E'  # military green
+    green:   '#FF006F'  # pink
+    yellow:  '#FF006F'  # blue-grey
+    blue:    '#FF006F'  # pink
+    magenta: '#4A8089'  # grey-blue (diff from blue-grey)
+    cyan:    '#00CDC1'  # bright blue
+    white:   '#76AAB6'  # blue-grey
 
   # Bright colors
   bright:
-    black:   '#90837A'
-    red:     '#FF006F'
-    green:   '#00CDC1'
-    yellow:  '#FF006F'
-    blue:    '#00CDC1'
-    magenta: '#00CDC1'
-    cyan:    '#00CDC1'
-    white:   '#00CDC1'
+    black:   '#90837A'  # light brown
+    red:     '#FF006F'  # pink
+    green:   '#00CDC1'  # bright blue
+    yellow:  '#FF006F'  # pink
+    blue:    '#00CDC1'  # bright blue
+    magenta: '#00CDC1'  # bright blue
+    cyan:    '#00CDC1'  # bright blue
+    white:   '#00CDC1'  # bright blue
 
   # Dim colors
   #
