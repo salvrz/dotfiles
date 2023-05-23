@@ -340,6 +340,7 @@ cp "${config}/xresources-cp" ~/.Xresources
     cp "${config}/nvim/rust-vim-cp" ~/.config/nvim/plug-config/rust.vim
     nvim --headless +PlugInstall +qa
     nvim --headless +'CocInstall coc-rust-analyzer coc-json coc-python coc-snippets coc-vimlsp' +qa
+    pip install pynvim
 
   # }}}
 
