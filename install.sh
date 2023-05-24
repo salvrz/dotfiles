@@ -13,7 +13,7 @@ distro=$(grep "ID_LIKE=" /etc/os-release)
 
 if echo $distro | grep arch; then ## arch based distros
   echo ">>>ARCH-BASED DISTRO"
-  su -c ./config_scripts/arch_install.sh "$1"
+  ./config_scripts/arch_install.sh "$1"
 
 else  # unsupported distro
   echo $distro

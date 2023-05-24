@@ -1,16 +1,17 @@
 #! /bin/bash
 
 # ensure admin username provided
-echo $1
 if [[ $# -lt 0 ]]; then
   echo "Usage: sh arch_install.sh <ADMIN_USERNAME>"
   exit 1
 else
-  sudo pacman -Syu
+  pacman -Syu
   echo ">>>INSTALLING zsh"
-  sudo pacman -S zsh
-  chsh -s $(which zsh)
-  su -c .config_scripts/arch_fresh_install.sh $1
+  pacman -S zsh
+  su -c chsh -s $(which zsh) $1
+  echo "testing"
+  ./config_scripts/arch_fesh_install.sh "$1"
+  #su -c ./config_scripts/arch_fresh_install.sh $1
   exit 0
 fi
 exit 1
