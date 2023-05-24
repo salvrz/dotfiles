@@ -26,12 +26,24 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # }}}
 
 
+# RUST {{{
+      
+  echo ">>>INSTALLING rust"
+  sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+  source "$client_home/.cargo/env"
+  rustup component add rust-src
+  zsh
+      
+# }}} 
+
+
 # PARU {{{
 
-  echo ">>>INSTALLING direnv"
+  echo ">>>INSTALLING paru"
   git clone https://aur.archlinux.org/paru.git
+  setfacl -m u:"$1":rwx paru
   cd paru
-  su -c makepkg -si "$1"
+  sudo -u "$1" makepkg -sri
   cd $cwd
   rm -rf ./paru
 
@@ -42,8 +54,9 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   
   echo ">>>INSTALLING yay"
   git clone https://aur.archlinux.org/yay-git.git
+  setfacl -m u:"$1":rwx yay-git
   cd yay-git
-  su -c makepkg -sri "$1"
+  sudo -u "$1" makepkg -sri
   cd $cwd
   rm -rf yay-git
 
@@ -343,16 +356,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     pip install pynvim
 
   # }}}
-
-
-  # RUST {{{
-      
-    echo ">>>INSTALLING rust"
-    sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
-    source "$client_home/.cargo/env"
-    rustup component add rust-src
-      
-  # }}} 
 
 
   # POLYBAR {{{
