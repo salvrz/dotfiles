@@ -10,7 +10,7 @@ else
   pacman -S zsh
   su -c chsh -s $(which zsh) $1
   echo "testing"
-  ./config_scripts/arch_fesh_install.sh "$1"
+  sudo ./config_scripts/arch_fesh_install.sh "$1"
   #su -c ./config_scripts/arch_fresh_install.sh $1
   exit 0
 fi
