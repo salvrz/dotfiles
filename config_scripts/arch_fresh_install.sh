@@ -31,7 +31,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   echo ">>>INSTALLING direnv"
   git clone https://aur.archlinux.org/paru.git
   cd paru
-  makepkg -si
+  su -c makepkg -si "$1"
   cd $cwd
   rm -rf ./paru
 
@@ -43,7 +43,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   echo ">>>INSTALLING yay"
   git clone https://aur.archlinux.org/yay-git.git
   cd yay-git
-  makepkg -sri
+  su -c makepkg -sri "$1"
   cd $cwd
   rm -rf yay-git
 
