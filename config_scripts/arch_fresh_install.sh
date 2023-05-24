@@ -4,8 +4,10 @@
 echo ">>>SETUP..."
 pwd
 cwd=$(pwd)
-config=$"{cwd}/.config"
-client_home=$"/home/{1}"
+config="${cwd}/.config"
+echo $config
+echo $1
+client_home="/home/${1}"
 echo $client_home
 
 sudo pacman -Syu
