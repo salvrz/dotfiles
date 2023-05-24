@@ -6,12 +6,12 @@ pwd
 cwd=$(pwd)
 config=$"{cwd}/.config"
 
-sudo -S pacman -Syu
-sudo -S pacman -S --needed git base-devel
-sudo -S pacman -S neofetch
+sudo pacman -Syu
+sudo pacman -S --needed git base-devel
+sudo pacman -S neofetch
 
 echo ">>>INSTALLING direnv"
-sudo -S pacman -S direnv
+sudo pacman -S direnv
 
 echo ">>>CONFIGURING X server"
 cp "${config}/xresources-cp" ~/.Xresources
@@ -29,7 +29,7 @@ cp "${config}/xresources-cp" ~/.Xresources
 
   echo ">>>INSTALLING direnv"
   git clone https://aur.archlinux.org/paru.git
-  sudo -S chown -R $USER:$USER ./paru 
+  sudo chown -R $USER:$USER ./paru 
   cd paru
   makepkg -si
   cd $cwd
@@ -63,7 +63,7 @@ cp "${config}/xresources-cp" ~/.Xresources
 # LIBSECRET {{{
     
   echo ">>>INSTALLING libsecret"
-  sudo -S pacman -S libsecret
+  sudo pacman -S libsecret
     
 # }}}
 
@@ -83,8 +83,8 @@ cp "${config}/xresources-cp" ~/.Xresources
     
   echo ">>>INSTALLING IBM Plex Mono and NERDFont Blex"
   # prep dirs
-  sudo -S mkdir -p /usr/local/share/fonts
-  sudo -S mkdir -p /usr/share/fonts/opentype
+  sudo mkdir -p /usr/local/share/fonts
+  sudo mkdir -p /usr/share/fonts/opentype
 
   # fetch fonts
   curl -fsLO --output-dir ./downloads/ --create-dirs https://github.com/IBM/plex/releases/download/v6.0.0/TrueType.zip
@@ -106,14 +106,14 @@ cp "${config}/xresources-cp" ~/.Xresources
   rm fontawesome-free-6.2.0-desktop.zip
 
   # download fonts
-  sudo -S mv ./TrueType/IBM-Plex-Mono/*.ttf /usr/local/share/fonts/
-  sudo -S mv ./fontawesome-free-6.2.0-desktop/otfs/* /usr/share/fonts/opentype/
+  sudo mv ./TrueType/IBM-Plex-Mono/*.ttf /usr/local/share/fonts/
+  sudo mv ./fontawesome-free-6.2.0-desktop/otfs/* /usr/share/fonts/opentype/
   rm -rf TrueType/
   rm -rf fontawesome-free-6.2.0-desktop/
-  sudo -S mv * /usr/local/share/fonts/
+  sudo mv * /usr/local/share/fonts/
 
   # cleanup
-  sudo -S rm -rf *
+  sudo rm -rf *
   fc-cache
   cd $cwd
     
@@ -132,7 +132,7 @@ cp "${config}/xresources-cp" ~/.Xresources
     
   echo ">>>CONFIGURING zsh"
   mkdir -p ~/.zsh
-  sudo -S git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+  sudo git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
   cp "${config}/shell/zshrc-cp" ~/.zshrc
     
 # }}}
@@ -145,7 +145,7 @@ cp "${config}/xresources-cp" ~/.Xresources
   # ALACRITTY {{{
 
     echo ">>>INSTALLING alacritty"
-    sudo -S pacman -S alacritty
+    sudo pacman -S alacritty
     mkdir ~/.config/alacritty
     cp "${config}/terminal/alacritty-cp.yml" ~/.config/alacritty/alacritty.yml
 
@@ -190,8 +190,8 @@ cp "${config}/xresources-cp" ~/.Xresources
   # NODEJS & NPM {{{
       
     echo ">>>INSTALLING nodejs & npm"
-    sudo -S pacman -S nodejs
-    sudo -S pacman -S npm
+    sudo pacman -S nodejs
+    sudo pacman -S npm
       
   # }}}
 
@@ -199,7 +199,7 @@ cp "${config}/xresources-cp" ~/.Xresources
   # HTOP {{{
       
     echo ">>>INSTALLING htop"
-    sudo -S pacman -S htop
+    sudo pacman -S htop
       
   # }}}
 
@@ -219,9 +219,9 @@ cp "${config}/xresources-cp" ~/.Xresources
   # PYTHON {{{
       
     echo ">>>INSTALLING python"
-    sudo -S pacman -S python
-    sudo -S pacman -S python-pip
-    sudo -S pacman -S ipython
+    sudo pacman -S python
+    sudo pacman -S python-pip
+    sudo pacman -S ipython
     # brew install poetry
     pip install -U pytest
       
@@ -231,8 +231,8 @@ cp "${config}/xresources-cp" ~/.Xresources
   # JAVA {{{
       
     echo ">>>INSTALLING java"
-    sudo -S pacman -S jdk-openjdk  # most recent version of openjdk java
-    #sudo -S pacman -S jdk11-openjdk  # openjdk java 11
+    sudo pacman -S jdk-openjdk  # most recent version of openjdk java
+    #sudo pacman -S jdk11-openjdk  # openjdk java 11
     # CURRENTLY DOESN'T INSTALL JUNIT
     # CURRENTLY DOESN'T INSTALL MAVEN
     #echo ">>>INSTALLING maven"
@@ -291,7 +291,7 @@ cp "${config}/xresources-cp" ~/.Xresources
   # VIM {{{
       
     echo ">>>INSTALLING vim"
-    sudo -S pacman -S vim
+    sudo pacman -S vim
     cp "${config}/vim/vimrc-cp" ~/.vimrc
 
     echo ">>>INSTALLING vim plugs"
@@ -307,8 +307,8 @@ cp "${config}/xresources-cp" ~/.Xresources
   # NVIM {{{
       
     echo ">>>INSTALLING nvim"
-    sudo -S pacman -S neovim
-    sudo -S pacman -S ranger
+    sudo pacman -S neovim
+    sudo pacman -S ranger
     paru -S python-ueberzug-git  # This will probably fail, not sure if package is necessary
     mkdir ~/.config/nvim
 
@@ -325,10 +325,10 @@ cp "${config}/xresources-cp" ~/.Xresources
     cp "${config}/nvim/plugins-vim-cp" ~/.config/nvim/vim-plug/plugins.vim
     cp "${config}/nvim/init-vim-cp" ~/.config/nvim/init.vim
     cp "${config}/nvim/mappings-vim-cp" ~/.config/nvim/keys/mappings.vim
-    sudo -S pacman -S xsel
+    sudo pacman -S xsel
     pip install pynvim
     pip install pynvim --upgrade
-    sudo -S npm i -g yarn
+    sudo npm i -g yarn
     cp "${config}/nvim/coc/coc-vim-cp" ~/.config/nvim/plug-config/coc.vim
     cp "${config}/nvim/coc/coc-settings-cp" ~/.config/nvim/coc-settings.json
     cp "${config}/nvim/vim-sunbather-cp" ~/.config/nvim/themes/vim-sunbather.vim
@@ -348,7 +348,7 @@ cp "${config}/xresources-cp" ~/.Xresources
   # RUST {{{
       
     echo ">>>INSTALLING rust"
-    sudo -S curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+    sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
     source "$HOME/.cargo/env"
     rustup component add rust-src
       
