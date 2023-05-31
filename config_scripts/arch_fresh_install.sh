@@ -81,17 +81,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # }}}
 
 
-# WIFI {{{
-
-  echo ">>>INSTALLING WiFi management system"
-  paru -S networkmanager
-  git clone https://github.com/P3rf/rofi-network-manager.git
-  sudo cp -r rofi-network-manager /opt/
-  rm -rf rofi-network-manager
-
-# }}}
-
-
 # FONTS {{{
     
   echo ">>>INSTALLING IBM Plex Mono and NERDFont Blex"
@@ -183,7 +172,8 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   paru -S dunst
   paru -S nm-connection-editor
   git clone https://github.com/P3rf/rofi-network-manager.git
-  mv -r rofi-network-manager $client_home/
+  sudo cp -r rofi-network-manager /opt/
+  rm -rf rofi-network-manager
 
 # }}}
 
@@ -191,6 +181,15 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # SOFTWARE {{{
 
   echo ">>>CONFIGURING software"
+
+  
+  # ASCIIDOC {{{
+
+    echo ">>>INSTALLING asciidoc"
+    paru -S asciidoc
+
+  # }}}
+
 
   # QALCULATE! {{{
   
