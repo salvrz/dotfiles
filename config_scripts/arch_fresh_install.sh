@@ -313,6 +313,14 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 
+  # CSCOPE {{{
+
+    echo ">>>INSTALLING cscope"
+    paru -S cscope
+
+  # }}}
+
+
   # VIM {{{
       
     echo ">>>INSTALLING vim"
