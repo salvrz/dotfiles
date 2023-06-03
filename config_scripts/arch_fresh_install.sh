@@ -182,11 +182,24 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
   echo ">>>CONFIGURING software"
 
-  
-  # ASCIIDOC {{{
+  # DOCUMENTATION {{{
+
+    echo ">>>CONFIGURING documentation software"
+
+    # ASCIIDOC {{{
 
     echo ">>>INSTALLING asciidoc"
     paru -S asciidoc
+
+    # }}}
+
+
+    # XMLTO {{{
+
+    echo ">>>INSTALLING xmlto"
+    paru -S xmlto
+
+    # }}}
 
   # }}}
 
@@ -324,35 +337,29 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     paru -S python-ueberzug-git  # This will probably fail, not sure if package is necessary
     mkdir $client_home/.config/nvim
 
-    echo ">>>CONFIGURING nvim"
-    mkdir $client_home/.config/nvim/general
-    mkdir $client_home/.config/nvim/vim-plug
-    mkdir $client_home/.config/nivm/keys
-    mkdir $client_home/.config/nivm/plug-config
-    mkdir $client_home/.config/nvim/themes
-    cp "${config}/nvim/nvim-settings" $client_home/.config/nvim/general/settings.vim
-
-    echo ">>>INSTALLING vim plugs for nvim"
+    echo ">>>INSTALLING vim plug plugins"
     curl -fLo $client_home/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    cp "${config}/nvim/plugins-vim-cp" $client_home/.config/nvim/vim-plug/plugins.vim
-    cp "${config}/nvim/init-vim-cp" $client_home/.config/nvim/init.vim
-    cp "${config}/nvim/mappings-vim-cp" $client_home/.config/nvim/keys/mappings.vim
+    cp "${config}/nvim/init.vim" $client_home/.config/nvim/init.vim
     sudo pacman -S xsel
     pip install pynvim
     pip install pynvim --upgrade
     sudo npm i -g yarn
-    cp "${config}/nvim/coc/coc-vim-cp" $client_home/.config/nvim/plug-config/coc.vim
-    cp "${config}/nvim/coc/coc-settings-cp" $client_home/.config/nvim/coc-settings.json
-    cp "${config}/nvim/vim-sunbather-cp" $client_home/.config/nvim/themes/vim-sunbather.vim
     git clone https://github.com/alexanderjeurissen/ranger_devicons $client_home/.config/ranger/plugins/ranger_devicons
     ranger --copy-config=all
-    cp "${config}/nvim/ranger/rc-conf-cp" $client_home/.config/ranger/rc.conf
-    cp "${config}/nvim/ranger/rnvimr-vim-cp" $client_home/.config/nvim/plug-config/rnvimr.vim
-    cp "${config}/nvim/mime-types-cp" $client_home/.mime.types
-    cp "${config}/nvim/rust-vim-cp" $client_home/.config/nvim/plug-config/rust.vim
+    cp "${config}/ranger/rc.conf" $client_home/.config/ranger/rc.conf
+    cp "${config}/nvim/mime.types" $client_home/.mime.types
+
+    echo ">>>CONFIGURING nvim"
+    cp -r "${config}/nvim/general" $client_home/.config/nvim/
+    cp -r "${config}/nvim/keys" $client_home/.config/nvim/
+    cp -r "${config}/nvim/themes" $client_home/.config/nvim/
+    cp -r "${config}/nvim/plug-config" $client_home/.config/nvim/
+    cp -r "${config}/nvim/vim-plug" $client_home/.config/nvim/
+    cp "${config}/nvim/coc-settings.json" $client_home/.config/nvim/coc-settings.json
+
+    echo ">>>FINALIZE nvim plugins"
     nvim --headless +PlugInstall +qa
     nvim --headless +'CocInstall coc-rust-analyzer coc-json coc-python coc-snippets coc-vimlsp' +qa
-    pip install pynvim
 
   # }}}
 

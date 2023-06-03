@@ -25,4 +25,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
   " Rust
   Plug 'rust-lang/rust.vim'
+  " vim man
+  Plug 'vim-utils/vim-man'
+
 call plug#end()
