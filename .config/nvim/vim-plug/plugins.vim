@@ -27,4 +27,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'rust-lang/rust.vim'
   " Git
   Plug 'tpope/vim-fugitive'
+  " vim man
+  Plug 'vim-utils/vim-man'
   call plug#end()
