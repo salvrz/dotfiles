@@ -164,6 +164,13 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # }}}
 
 
+# SCREEN {{{
+
+  paru -S screen
+
+# }}}
+
+
 # INTERNET {{{
 
   echo ">>>CONFIGURING internet"
