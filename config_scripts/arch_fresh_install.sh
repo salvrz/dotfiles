@@ -361,8 +361,11 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     sudo npm i -g yarn
     git clone https://github.com/alexanderjeurissen/ranger_devicons $client_home/.config/ranger/plugins/ranger_devicons
     ranger --copy-config=all
-    cp "${config}/ranger/rc.conf" $client_home/.config/ranger/rc.conf
-    cp "${config}/nvim/mime.types" $client_home/.mime.types
+    rcl=~/.config/ranger/rc.conf
+    echo '# My Configurations' >> $rcl
+    echo 'set show_hidden true' >> $rcl
+    echo 'set draw_borders both' >> $rcl
+    echo 'default_linemode devicons' >> $rcl
 
     echo ">>>CONFIGURING nvim"
     cp -r "${config}/nvim/general" $client_home/.config/nvim/
