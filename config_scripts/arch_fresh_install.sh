@@ -26,13 +26,25 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # }}}
 
 
+# NODEJS & NPM {{{
+
+  echo ">>>INSTALLING nodejs & npm"
+  sudo pacman -S nodejs
+  sudo pacman -S npm
+
+# }}}
+
+
 # RUST {{{
       
   echo ">>>INSTALLING rust"
   sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
   source "$client_home/.cargo/env"
   rustup component add rust-src
-  zsh
+  tset
+  git clone https://github.com/rust-lang/rust-analyzer.git
+  cd rust-analyzer
+  cargo xtask install
       
 # }}} 
 
@@ -216,15 +228,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     echo ">>>INSTALLING qualculate"
     paru -S qalculate-gtk
   
-  # }}}
-
-
-  # NODEJS & NPM {{{
-      
-    echo ">>>INSTALLING nodejs & npm"
-    sudo pacman -S nodejs
-    sudo pacman -S npm
-      
   # }}}
 
 
