@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo ">>>ARCH-BASED DISTRO"
+
 # ensure admin username provided
 if [[ $# -lt 0 ]]; then
   echo "Usage: sh arch_install.sh <ADMIN_USERNAME>"
@@ -7,12 +9,14 @@ if [[ $# -lt 0 ]]; then
 else
   pwd
   pacman -Syu
+
   echo ">>>INSTALLING zsh"
   pacman -S zsh
   shell_path=$(which zsh)
   usermod --shell $(which zsh) "$1"
+
   sudo ./config_scripts/arch_fresh_install.sh "$1"
-  #su -c ./config_scripts/arch_fresh_install.sh $1
   exit 0
 fi
+
 exit 1
