@@ -28,12 +28,12 @@ if [[ $# -eq 2 ]]; then
   exit 0
 
 else if [[ $# -eq 3 ]]; then
-  sh ./config_scripts/git_config.sh "$2" "$3"
+  sh ./config_scripts/git_cred_setup.sh "$2" "$3"
   exit 0
 
 else if [[ $# -eq 4 ]]; then
   name="${3} ${4}"
-  sh ./config_scripts/git_config.sh "$2" "$name"
+  sh ./config_scripts/git_cred_setup.sh "$2" "$name"
   exit 0
 
 else

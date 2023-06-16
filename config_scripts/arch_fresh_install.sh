@@ -426,3 +426,12 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 # }}}
+
+
+# GIT {{{
+
+  echo ">>>CONFIGURING git"
+
+  git config --global core.editor "nvim"
+
+# }}}
