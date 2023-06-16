@@ -280,14 +280,14 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#76AAB6'  # blue-grey
+    black:   '#0D0D0D'  # background off-grey
     red:     '#47624E'  # military green
     green:   '#FF006F'  # pink
     yellow:  '#FF006F'  # blue-grey
     blue:    '#FF006F'  # pink
     magenta: '#4A8089'  # grey-blue (diff from blue-grey)
     cyan:    '#00CDC1'  # bright blue
-    white:   '#76AAB6'  # blue-grey
+    white:   '#90837A'  # text light off-grey
 
   # Bright colors
   bright:
