@@ -46,38 +46,43 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# set default editor
-export EDITOR=nvim
+#
+# Set default editor
+#
 
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+#
 # ls aliases
+#
 alias ls="ls --color=auto"
 alias ll="ls -alF"
 alias l="ls -CF"
 
-# poetry config
+#
+# Path Edits
+#
+
+#if [[ -r /home/linuxbrew/.linuxbrew/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+#source /home/linuxbrew/.linuxbrew/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh
+#fi
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/sonarqube/bin:$PATH"
+export PATH="/opt/sonarscanner/bin:$PATH"
+export PATH="/home/salvar/DataGrip-2022.2.4/bin:$PATH"
+export PATH="/opt/clion-2022.2.3/bin:$PATH"
+export PATH="/home/salvar/filecamp/llvm-project/build/bin:$PATH"
+
+#
+# Third party app edits
+#
 
 eval "$(direnv hook zsh)"  # for direnv use
+export RANGER_LOAD_DEFAULT_RC=false  # force ranger to use ~/.config/ranger/rc.conf
+export GCC_ARM_TOOLS_PATH=/opt/arm-gnu-toolchain-12.2/bin  # include arm gnu toolchain
+alias clion="clion.sh"  # clion alias
+alias logisim="java -jar ~/filecamp/logisim-2.3.1.jar"  # logisim alias
+export GIT_EDITOR=nvim
 
-# force ranger to use ~/.config/ranger/rc.conf
-export RANGER_LOAD_DEFAULT_RC=false
-
-# EVT arm gnu toolchain
-export GCC_ARM_TOOLS_PATH=/opt/arm-gnu-toolchain-12.2.mpacbti-bet1-x86_64-arm-none-eabi/bin
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/home/salvar/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/home/salvar/miniconda3/etc/profile.d/conda.sh" ]; then
-#        . "/home/salvar/miniconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/home/salvar/miniconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
