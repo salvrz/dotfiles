@@ -201,22 +201,35 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
   echo ">>>CONFIGURING software"
 
+  # EMAIL {{{
+
+  echo ">>>CONFIGURING email clients"
+
+    # NEOMUTT {{{
+
+      echo ">>>INSTALLING neomutt"
+      paru -S neomutt
+
+    # }}}
+
+  #}}}
+
   # DOCUMENTATION {{{
 
     echo ">>>CONFIGURING documentation software"
 
     # ASCIIDOC {{{
 
-    echo ">>>INSTALLING asciidoc"
-    paru -S asciidoc
+      echo ">>>INSTALLING asciidoc"
+      paru -S asciidoc
 
     # }}}
 
 
     # XMLTO {{{
 
-    echo ">>>INSTALLING xmlto"
-    paru -S xmlto
+      echo ">>>INSTALLING xmlto"
+      paru -S xmlto
 
     # }}}
 
