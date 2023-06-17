@@ -282,7 +282,7 @@ colors:
   normal:
     black:   '#0D0D0D'  # background off-grey
     red:     '#47624E'  # military green
-    green:   '#FF006F'  # pink
+    green:   '#0D0D0D'  # background off-grey
     yellow:  '#FF006F'  # blue-grey
     blue:    '#FF006F'  # pink
     magenta: '#4A8089'  # grey-blue (diff from blue-grey)
