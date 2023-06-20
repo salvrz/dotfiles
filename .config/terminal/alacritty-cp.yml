@@ -282,10 +282,10 @@ colors:
   normal:
     black:   '#0D0D0D'  # background off-grey
     red:     '#47624E'  # military green
-    green:   '#0D0D0D'  # background off-grey
+    green:   '#4A8089'  # grey-blue (diff from blue grey)
     yellow:  '#FF006F'  # blue-grey
     blue:    '#FF006F'  # pink
-    magenta: '#4A8089'  # grey-blue (diff from blue-grey)
+    magenta: '#4A8089'  # grey-blue
     cyan:    '#00CDC1'  # bright blue
     white:   '#90837A'  # text light off-grey
 
