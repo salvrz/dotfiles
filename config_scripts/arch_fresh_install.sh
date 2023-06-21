@@ -208,6 +208,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     # NEOMUTT {{{
 
       echo ">>>INSTALLING neomutt"
+      paru -S mutt
       paru -S neomutt
 
     # }}}
