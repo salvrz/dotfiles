@@ -413,6 +413,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     cp -r "${config}/nvim/themes" $client_home/.config/nvim/
     cp -r "${config}/nvim/plug-config" $client_home/.config/nvim/
     cp -r "${config}/nvim/vim-plug" $client_home/.config/nvim/
+    cp -r "${config}/nvim/after" $client_home/.config/nvim/
     cp "${config}/nvim/coc-settings.json" $client_home/.config/nvim/coc-settings.json
 
     echo ">>>FINALIZE nvim plugins"
