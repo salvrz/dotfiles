@@ -205,11 +205,34 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
   echo ">>>CONFIGURING email clients"
 
-    # NEOMUTT {{{
+    # MUTT {{{
 
-      echo ">>>INSTALLING neomutt"
+      echo ">>>INSTALLING mutt"
       paru -S mutt
-      paru -S neomutt
+      paru -S gnupg
+      paru -S pinentry  # required for gnupg prompt
+
+      echo ">>>CONFIGURING mutt"
+
+      # Place config files
+      mkdir $client_home/.mutt
+      curl https://gitlab.com/api/v4/projects/4815250/repository/files/contrib%2fmutt_oauth2.py/raw\?ref\=master > $client_home/.mutt/mutt_oauth2.py
+      cp -r "${config}/mutt" $client_home/.mutt  # assumes .mutt doesn't already exist
+
+      # have user configure mutt account
+      echo ">>>UPDATE ~/.mutt/muttrc with your email and name"
+      echo ">>>press enter when you're done"
+      read -n 1 -s  # wait for user input
+
+      # set up gpg key
+      gpg --gen-key
+
+      # have user configure oauth2 for mutt
+      echo ">>>CONFIGURE mutt_oauth2.py (see https://www.redhat.com/sysadmin/mutt-email-oauth2)"
+      echo ">>>press ENTER when mutt_oauth2.py is configured with gmail"
+      read -n 1 -s  # wait for user input
+      echo ">>>INSTRUCTIONS: for the following prompt, specify in this order:\ngoogle\nauthcode\n<your email>\n\n"
+      python3 $client_home/.mutt/mutt_oauth2.py $client_home/.mutt/my_gmail.token --verbose --authorize
 
     # }}}
 
