@@ -218,6 +218,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
       mkdir $client_home/.mutt
       curl https://gitlab.com/api/v4/projects/4815250/repository/files/contrib%2fmutt_oauth2.py/raw\?ref\=master > $client_home/.mutt/mutt_oauth2.py
       cp -r "${config}/mutt" $client_home/.mutt  # assumes .mutt doesn't already exist
+      mkdir $client_home/patch  # dir to save patches from mutt to
 
       # have user configure mutt account
       echo ">>>UPDATE ~/.mutt/muttrc with your email and name"
