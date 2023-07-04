@@ -122,7 +122,8 @@
     ],
     "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "window.zoomLevel": 1,
-    "telemetry.telemetryLevel": "off"
+    "telemetry.telemetryLevel": "off",
+"window.zoomLevel": 1,
+"files.trimTrailingWhitespace": true
     
 }
