@@ -400,6 +400,8 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     pip install pynvim
     pip install pynvim --upgrade
     sudo npm i -g yarn
+
+    echo ">>>CONFIGURING nvim ranger"
     git clone https://github.com/alexanderjeurissen/ranger_devicons $client_home/.config/ranger/plugins/ranger_devicons
     ranger --copy-config=all
     rcl=~/.config/ranger/rc.conf
@@ -414,7 +416,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     cp -r "${config}/nvim/themes" $client_home/.config/nvim/
     cp -r "${config}/nvim/plug-config" $client_home/.config/nvim/
     cp -r "${config}/nvim/vim-plug" $client_home/.config/nvim/
-    cp -r "${config}/nvim/after" $client_home/.config/nvim/
     cp "${config}/nvim/coc-settings.json" $client_home/.config/nvim/coc-settings.json
 
     echo ">>>FINALIZE nvim plugins"
