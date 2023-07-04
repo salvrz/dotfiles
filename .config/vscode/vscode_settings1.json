@@ -20,8 +20,8 @@
     "editor.fontWeight": "400",
     "editor.fontLigatures": "'zero' 1",
     "editor.detectIndentation": false,
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
+    "editor.tabSize": 8,
+    "editor.insertSpaces": false,
     "editor.bracketPairColorization.enabled": true,//<<<<<
     "editor.guides.bracketPairs":"active",  //<<<<<
     "workbench.colorCustomizations": {
