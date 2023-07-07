@@ -3,12 +3,12 @@
 set folder="imaps://imap.gmail.com:993"
 set spoolfile="+INBOX"
 set postponed="+[Gmail]/Drafts"
-set from=#email@email.com-----------------------------------------------------
-set realname=#"Sam Smith"-----------------------------------------------------
-set imap_authenticators="oauthbearer"
-set imap_user=#"email@email.com"----------------------------------------------
-set smtp_authenticators="oauthbearer"
-set smtp_url=#"smtps://email@email.com@smtp.gmail.com:465"---------------------
+set from=stevie.6strings@gmail.com
+set realname="Stevie Alvarez"
+set imap_authenticators="oauthbearer:xoauth2"
+set imap_user="stevie.6strings@gmail.com"
+set smtp_authenticators=${imap_authenticators}
+set smtp_url="smtps://stevie.6strings@gmail.com@smtp.gmail.com:587"
 set imap_oauth_refresh_command="python3 /home/$LOGNAME/.mutt/mutt_oauth2.py /home/$LOGNAME/.mutt/my_gmail.token"
 set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
 
@@ -27,6 +27,7 @@ set imap_check_subscribed
 set mail_check=60
 
 # random settings
+set trash='[Gmail]/Trash'
 unset record
 unset imap_passive
 set move=no
