@@ -113,9 +113,11 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   paru -S git-credential-manager-core
   cpan Authen::SASL MIME::Base64 Net::SMTP::SSL
 
+  # FOR UBUNTU: install gcm via tarball from github
+
   echo ">>>CONFIGURING git credential manager"
-  git-credential-manager configure
   cp "${config}/git/gitconfig" $client_home/.gitconfig
+  git-credential-manager configure
 
   echo ">>>UPDATE run \`pass init <gpg-id>\` with the gpg id generated bellow. Press enter when you're done."
   echo ">>>HINT use the key-code after the \'pub\' identifier for the id."
