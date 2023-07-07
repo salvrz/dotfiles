@@ -85,11 +85,53 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # }}}
 
 
-# LIBSECRET {{{
+# BASH CONFIG {{{
     
-  echo ">>>INSTALLING libsecret"
-  sudo pacman -S libsecret
+  echo ">>>CONFIGURING bash"
+  cp "${config}/shell/bashrc-cp" $client_home/.bashrc
     
+# }}}
+
+
+# ZSH {{{
+    
+  echo ">>>CONFIGURING zsh"
+  mkdir -p $client_home/.zsh
+  sudo git clone https://github.com/sindresorhus/pure.git "$client_home/.zsh/pure"
+  cp "${config}/shell/zshrc-cp" $client_home/.zshrc
+    
+# }}}
+
+
+# GIT CREDENTIALS {{{
+
+  echo ">>>CONFIGURING git credential management"
+  echo ">>>INSTALLING git credential manager"
+  paru -S gnupg
+  paru -S pinentry  # gnupg uses for password prompt
+  paru -S pass
+  paru -S git-credential-manager-core
+  cpan Authen::SASL MIME::Base64 Net::SMTP::SSL
+
+  echo ">>>CONFIGURING git credential manager"
+  git-credential-manager configure
+  cp "${config}/git/gitconfig" $client_home/.gitconfig
+
+  echo ">>>UPDATE run \`pass init <gpg-id>\` with the gpg id generated bellow. Press enter when you're done."
+  echo ">>>HINT use the key-code after the \'pub\' identifier for the id."
+  gpg --gen-key
+  read -n 1 -s  # wait for user input
+  # user should run pass init <gpg-id> here
+
+  echo ">>>UPDATE you must configure google apppasswords to send email via git. See step 4 of this guide:\nhttps://stackoverflow.com/questions/68238912/how-to-configure-and-use-git-send-email-to-work-with-gmail-to-email-patches-to"
+  echo ">>>After you generate an apppassword, create a patch and use git-email to send it to yourself. Enter the password when prompted."
+  echo ">>>Press enter when you're done."
+  read -n 1 -s  # wait for user input
+
+  echo ">>>UPDATE you must configure an ssh key with github. See:\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+  echo ">>>Press enter when you're done."
+  read -n 1 -s  # wait for user input
+
 # }}}
 
 
@@ -130,24 +172,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   sudo rm -rf *
   fc-cache
   cd $cwd
-    
-# }}}
-
-
-# BASH CONFIG {{{
-    
-  echo ">>>CONFIGURING bash"
-  cp "${config}/shell/bashrc-cp" $client_home/.bashrc
-    
-# }}}
-
-
-# ZSH {{{
-    
-  echo ">>>CONFIGURING zsh"
-  mkdir -p $client_home/.zsh
-  sudo git clone https://github.com/sindresorhus/pure.git "$client_home/.zsh/pure"
-  cp "${config}/shell/zshrc-cp" $client_home/.zshrc
     
 # }}}
 
@@ -209,8 +233,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
       echo ">>>INSTALLING mutt"
       paru -S mutt
-      paru -S gnupg
-      paru -S pinentry  # required for gnupg prompt
 
       echo ">>>CONFIGURING mutt"
 

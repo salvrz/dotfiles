@@ -1,0 +1,21 @@
+[user]
+	name	= Stevie Alvarez
+	email	= stevie.6strings@gmail.com
+[credential]
+	helper = 
+	helper		= /usr/bin/git-credential-manager
+	credentialStore = gpg
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[core]
+	editor = nvim
+[sendemail]
+	smtpserver	= smtp.gmail.com
+	smtpserverport	= 587
+	smtpencryption	= tls
+	from		= Stevie Alvarez <stevie.6strings@gmail.com>
+	smtpuser	= stevie.6strings@gmail.com
+	# smtppass = <retrieved via credential manager>
+	confirm		= auto
+[http]
+	sslAutoClientCert = true
