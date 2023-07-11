@@ -1,0 +1,4 @@
+# config for message_id_format since mutt doesn't handle the base-64 char set
+# https://people.kernel.org/monsieuricon/fix-your-mutt
+set message_id_format = "<%Y%02m%02d%02H%02M%02S.G%c%p@%f>"
+

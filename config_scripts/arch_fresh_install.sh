@@ -231,23 +231,19 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
   echo ">>>CONFIGURING email clients"
 
-    # MUTT {{{
+    # MUTT/NEOMUTT {{{
 
-      echo ">>>INSTALLING mutt"
+      echo ">>>INSTALLING mutt and neomutt"
       paru -S mutt
+      paru -S neomutt
 
       echo ">>>CONFIGURING mutt"
 
       # Place config files
       mkdir $client_home/.mutt
-      curl https://gitlab.com/api/v4/projects/4815250/repository/files/contrib%2fmutt_oauth2.py/raw\?ref\=master > $client_home/.mutt/mutt_oauth2.py
-      cp -r "${config}/mutt" $client_home/.mutt  # assumes .mutt doesn't already exist
+      #curl https://gitlab.com/api/v4/projects/4815250/repository/files/contrib%2fmutt_oauth2.py/raw\?ref\=master > $client_home/.mutt/mutt_oauth2.py
+      cp -r "${config}/mutt" $client_home/.mutt
       mkdir $client_home/patch  # dir to save patches from mutt to
-
-      # have user configure mutt account
-      echo ">>>UPDATE ~/.mutt/muttrc with your email and name"
-      echo ">>>press enter when you're done"
-      read -n 1 -s  # wait for user input
 
       # set up gpg key
       gpg --gen-key
@@ -257,7 +253,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
       echo ">>>press ENTER when mutt_oauth2.py is configured with gmail"
       read -n 1 -s  # wait for user input
       echo ">>>INSTRUCTIONS: for the following prompt, specify in this order:\ngoogle\nauthcode\n<your email>\n\n"
-      python3 $client_home/.mutt/mutt_oauth2.py $client_home/.mutt/my_gmail.token --verbose --authorize
+      sh $client_home/.mutt/oauth/refresh_token.sh
 
     # }}}
 
