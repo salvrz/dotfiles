@@ -1,5 +1,8 @@
-# google.com auth
-#set hostname="google.com"
+# my mutt config
+
+# force tls -> implicit tls over 465 (IETF preferred)
+# starttls -> tls over 587 (not IETF preferred)
+set ssl_force_tls = yes
 set folder="imaps://imap.gmail.com:993"
 set spoolfile="+INBOX"
 set postponed="+[Gmail]/Drafts"
@@ -8,7 +11,7 @@ set realname="Stevie Alvarez"
 set imap_authenticators="oauthbearer:xoauth2"
 set imap_user="stevie.6strings@gmail.com"
 set smtp_authenticators=${imap_authenticators}
-set smtp_url="smtps://stevie.6strings@gmail.com@smtp.gmail.com:587"
+set smtp_url="smtps://stevie.6strings@gmail.com@smtp.gmail.com:465"
 set imap_oauth_refresh_command="python3 /home/$LOGNAME/.mutt/oauth/mutt_oauth2.py /home/$LOGNAME/.mutt/oauth/my_gmail.token"
 set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
 
