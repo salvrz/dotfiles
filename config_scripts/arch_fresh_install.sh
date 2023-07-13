@@ -381,6 +381,14 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 
+  # CSCOPE {{{
+
+    echo ">>>INSTALLING cscope"
+    paru -S cscope
+
+  # }}}
+
+
   # VIM {{{
       
     echo ">>>INSTALLING vim"
@@ -433,32 +441,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     echo ">>>FINALIZE nvim plugins"
     nvim --headless +PlugInstall +qa
     nvim --headless +'CocInstall coc-rust-analyzer coc-json coc-python coc-snippets coc-vimlsp' +qa
-
-  # }}}
-
-  # C Indexing {{{
-
-    # CSCOPE {{{
-
-      echo ">>>INSTALLING cscope"
-      paru -S cscope
-
-    # }}}
-
-
-    # U-CTAGS {{{
-
-      echo ">>>INSTALLING u-ctags"
-      git clone https://github.com/universal-ctags/ctags.git
-      cd ctags
-      ./autogen.sh
-      ./configure  # --prefix=/specify/path, default is /usr/local
-      make
-      sudo make install
-      cd $cwd
-      rm -rf ctags
-
-    # }}}
 
   # }}}
 
