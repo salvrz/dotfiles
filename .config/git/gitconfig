@@ -44,3 +44,6 @@
 	# commit signed
 	cs = commit -s
 
+	# Interactive rebase
+	ri = rebase -i
+	rim = rebase -i master
