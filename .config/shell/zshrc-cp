@@ -68,6 +68,7 @@ export EDITOR="$VISUAL"
 alias ls="ls --color=auto"
 alias ll="ls -alF"
 alias l="ls -CF"
+alias mutttoken="sh ~/.mutt/oauth/refresh_token.sh"
 alias nmutt="neomutt"
 
 #
