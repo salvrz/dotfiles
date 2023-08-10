@@ -414,6 +414,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     mkdir $client_home/.config/nvim
 
     echo ">>>INSTALLING vim plug plugins"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     curl -fLo $client_home/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     cp "${config}/nvim/init.vim" $client_home/.config/nvim/init.vim
     sudo pacman -S xsel
