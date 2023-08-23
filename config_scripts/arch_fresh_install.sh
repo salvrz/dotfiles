@@ -381,10 +381,48 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 
-  # CSCOPE {{{
+  # C config {{{
 
-    echo ">>>INSTALLING cscope"
-    paru -S cscope
+    echo ">>>CONFIGURING C dev environment"
+
+    # CSCOPE {{{
+
+      echo ">>>INSTALLING cscope"
+      paru -S cscope
+
+    # }}}
+
+
+    # CMAKE {{{  NOTE: this is a prereq for ccls
+
+      echo ">>>INSTALLING cmake (prereq for ccls)"
+      paru -S cmake
+
+    # }}}
+
+
+    # LLVM {{{  NOTE: this is a prereq for ccls
+
+      echo ">>>INSTALLING llvm (prereq for ccls)"
+      paru -S llvm
+
+    # }}}
+
+
+    # CLANG {{{  NOTE: this is a prereq for ccls
+
+      echo ">>>INSTALLING clang (prereq for ccls)"
+      paru -S clang
+
+    # }}}
+
+
+    # CCLS {{{
+
+      echo ">>>INSTALLING ccls"
+      paru -S ccls-git
+
+    # }}}
 
   # }}}
 
@@ -416,6 +454,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     pip install pynvim --upgrade
     sudo npm i -g yarn
     yay -S ueberzug
+    paru -S ripgrep  # telescope.nvim dependency
     mkdir $client_home/.config/nvim
 
     echo ">>>INSTALLING vim plug plugins"
