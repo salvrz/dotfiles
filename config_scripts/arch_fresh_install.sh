@@ -432,6 +432,12 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
     echo 'set draw_borders both' >> $rcl
     echo 'default_linemode devicons' >> $rcl
 
+    echo "In ~/.config/ranger/rifle.conf, append each filetype line that has 'php' in it with 'rs'"
+    echo "\nFor example:"
+    echo "...py|pl|rb|js|sh|php = ask"
+    echo "=> ...py|pl|rb|js|sh|php|rs = ask"
+    read -n 1 -s  # wait for user input
+
     echo ">>>CONFIGURING nvim"
     cp -r "${config}/nvim/general" $client_home/.config/nvim/
     cp -r "${config}/nvim/keys" $client_home/.config/nvim/
