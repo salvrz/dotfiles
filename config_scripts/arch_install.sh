@@ -12,8 +12,7 @@ else
 
   echo ">>>INSTALLING zsh"
   pacman -S zsh
-  shell_path=$(which zsh)
-  usermod --shell $(which zsh) "$1"
+  sudo usermod --shell $(which zsh) "$1"
 
   sudo ./config_scripts/arch_fresh_install.sh "$1"
   exit 0
