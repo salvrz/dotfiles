@@ -457,10 +457,12 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     paru -S ripgrep  # telescope.nvim dependency
     mkdir $client_home/.config/nvim
 
-    echo ">>>INSTALLING vim plug plugins"
+    echo ">>>CONFIGURING nvim"
+    cp -r "${config}/nvim" $client_home/.config
+
+    echo ">>>INSTALLING vim plug"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     curl -fLo $client_home/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    cp "${config}/nvim/init.vim" $client_home/.config/nvim/init.vim
 
     echo ">>>CONFIGURING nvim ranger"
     git clone https://github.com/alexanderjeurissen/ranger_devicons $client_home/.config/ranger/plugins/ranger_devicons
@@ -477,17 +479,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
     echo "=> ...py|pl|rb|js|sh|php|rs = ask"
     read -n 1 -s  # wait for user input
 
-    echo ">>>CONFIGURING nvim"
-    cp -r "${config}/nvim/general" $client_home/.config/nvim/
-    cp -r "${config}/nvim/keys" $client_home/.config/nvim/
-    cp -r "${config}/nvim/themes" $client_home/.config/nvim/
-    cp -r "${config}/nvim/plug-config" $client_home/.config/nvim/
-    cp -r "${config}/nvim/vim-plug" $client_home/.config/nvim/
-    cp "${config}/nvim/coc-settings.json" $client_home/.config/nvim/coc-settings.json
-
     echo ">>>FINALIZE nvim plugins"
     nvim --headless +PlugInstall +qa
-    nvim --headless +'CocInstall coc-rust-analyzer coc-json coc-python coc-snippets coc-vimlsp' +qa
+    # for vimscript config:
+    # nvim --headless +'CocInstall coc-rust-analyzer coc-json coc-python coc-snippets coc-vimlsp' +qa
 
   # }}}
 
