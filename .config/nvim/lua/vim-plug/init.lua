@@ -28,7 +28,7 @@ vim.call('plug#begin', '~/.config/nvim/autoload/plugged')
 
 	-- Fuzzy finder
 	Plug('nvim-telescope/telescope.nvim', { tag = '0.1.2' })
-	
+
 	-- Auto pairs for ( [ {
 	Plug('jiangmiao/auto-pairs')
 
