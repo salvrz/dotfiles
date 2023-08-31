@@ -500,6 +500,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
     cd $cwd
     cp "${config}/polybar/my_modules.ini" $client_home/.config/polybar/my_modules.ini
     cp "${config}/polybar/poly_themes_hack_conf.ini" $client_home/.config/polybar/hack/config.ini
+    cp "${config}/polybar/powermenu.sh" $client_home/.config/polybar/hack/scripts/powermenu.sh
   
   # }}}
 
