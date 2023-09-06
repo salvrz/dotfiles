@@ -528,5 +528,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
   # }}}
 
+
+  # LATEX {{{
+
+    echo ">>>INSTALLING latex apps"
+
+    paru -S texlive-basic texlive-latex texlive-latexrecommended texlive-latexextra texlive-binextra
+
+  # }}}
+
 # }}}
 
