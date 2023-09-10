@@ -32,9 +32,13 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
 # RUST {{{
       
-  echo ">>>CONFIGURING rust"
-  source "$client_home/.cargo/env"
+  echo ">>>INSTALLING rust"
+  sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  exec  # restart shell
+
+  rustup install stable
   rustup component add rust-src
+  source "$client_home/.cargo/env"
   tset
   git clone https://github.com/rust-lang/rust-analyzer.git
   cd rust-analyzer
