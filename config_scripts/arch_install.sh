@@ -8,13 +8,13 @@ if [[ $# -lt 0 ]]; then
   exit 1
 else
   pwd
-  pacman -Syu
+  sudo pacman -Syu
 
   echo ">>>INSTALLING zsh"
-  pacman -S zsh
+  sudo pacman -S zsh
   sudo usermod --shell $(which zsh) "$1"
 
-  sudo ./config_scripts/arch_fresh_install.sh "$1"
+  sudo sh ./config_scripts/arch_fresh_install.sh "$1"
   exit 0
 fi
 
