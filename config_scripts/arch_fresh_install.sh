@@ -2,14 +2,9 @@
 
 # setup
 echo ">>>SETUP..."
-pwd
 cwd=$(pwd)
 config="${cwd}/.config"
 client_home="/home/${1}"
-
-sudo pacman -Syu
-sudo pacman -S --needed git base-devel
-sudo pacman -S neofetch
 
 echo ">>>INSTALLING direnv"
 sudo pacman -S direnv
@@ -37,8 +32,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
 # RUST {{{
       
-  echo ">>>INSTALLING rust"
-  sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  echo ">>>CONFIGURING rust"
   source "$client_home/.cargo/env"
   rustup component add rust-src
   tset

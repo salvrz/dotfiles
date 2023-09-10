@@ -9,12 +9,17 @@ if [[ $# -lt 0 ]]; then
 else
   pwd
   sudo pacman -Syu
+  sudo pacman -S --needed git base-devel
+  sudo pacman -S neofetch
 
   echo ">>>INSTALLING zsh"
   sudo pacman -S zsh
   sudo usermod --shell $(which zsh) "$1"
 
-  sudo sh ./config_scripts/arch_fresh_install.sh "$1"
+  echo ">>>INSTALLING rust"
+  sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+  exec "sudo sh ./config_scripts/arch_fresh_install.sh $1"
   exit 0
 fi
 
