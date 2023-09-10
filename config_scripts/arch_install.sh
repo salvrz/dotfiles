@@ -19,7 +19,8 @@ else
   echo ">>>INSTALLING rust"
   sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-  exec "sudo sh ./config_scripts/arch_fresh_install.sh $1"
+  cwd=$(pwd)
+  exec "sudo sh ${pwd}/config_scripts/arch_fresh_install.sh ${1}"
   exit 0
 fi
 
