@@ -38,7 +38,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # RUST {{{
       
   echo ">>>INSTALLING rust"
-  sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+  sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   source "$client_home/.cargo/env"
   rustup component add rust-src
   tset
