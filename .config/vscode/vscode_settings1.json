@@ -11,6 +11,7 @@
         "<C-v>": false,
         "<C-x>": false
     },
+    "editor.rulers": [74, 80],
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "code-runner.runInTerminal": true,

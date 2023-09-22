@@ -11,6 +11,7 @@
         "<C-v>": false,
         "<C-x>": false
     },
+    "editor.rulers": [74, 80],
     "code-runner.runInTerminal": true,
     "workbench.colorTheme": "Vesper",
     "files.autoSave": "off",

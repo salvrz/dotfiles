@@ -5,7 +5,7 @@ vim.cmd([[syntax enable]])		-- Enable syntax highlighting
 vim.opt.hidden		= true		-- Required to keep multiple buffers open
 vim.opt.mouse		= "a"		-- Enable mouse
 vim.opt.number		= true		-- Line Numbers
-vim.opt.colorcolumn	= "80"		-- Column marker
+vim.opt.colorcolumn	= {74, 80}	-- Column marker
 vim.opt.ruler		= true		-- Show the cursor position all the time
 vim.opt.iskeyword:append { '-' }	-- Treat dash separated words as a word text object
 vim.opt.fileencoding	= "utf-8"	-- Encoding written to a file
