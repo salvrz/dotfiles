@@ -16,7 +16,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # KEY BINDINGS {{{
 
   echo ">>>CONFIGURING key bindings vis sxhkd"
-  cp "${config}/sxhkdrc-cp" $client_home/.config/sxhkd/sxhkdrc
+  cp -r "${config}/sxhkd/*" $client_home/.config/sxhkd
 
 # }}}
 
@@ -488,7 +488,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
   # POLYBAR {{{
   
     echo ">>>CONFIGURING polybar"
-    cp "${config}/polybar/poly-config.ini" $client_home/.config/polybar/config.ini
     paru -S ttf-iosevka-nerd
     git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
     mv ./polybar-themes $client_home/polybar-themes
@@ -496,9 +495,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
     chmod +x setup.sh
     ./setup.sh
     cd $cwd
-    cp "${config}/polybar/my_modules.ini" $client_home/.config/polybar/my_modules.ini
-    cp "${config}/polybar/poly_themes_hack_conf.ini" $client_home/.config/polybar/hack/config.ini
-    cp "${config}/polybar/powermenu.sh" $client_home/.config/polybar/hack/scripts/powermenu.sh
+    cp -r "${config}/polybar/*" $client_home/.config/polybar/
   
   # }}}
 
