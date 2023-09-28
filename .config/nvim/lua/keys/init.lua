@@ -5,10 +5,10 @@ vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', 'kj', '<Esc>')
 
 --
--- Window splitting (ctrl + cv)
+-- Window splitting (alt + cv)
 --
-vim.keymap.set('n', '<C-v>', '<C-w>v')
-vim.keymap.set('n', '<C-c>', '<C-w>s')
+vim.keymap.set('n', '<M-v>', '<C-w>v')
+vim.keymap.set('n', '<M-c>', '<C-w>s')
 
 --
 -- Window nav (ctrl + hjkl)
