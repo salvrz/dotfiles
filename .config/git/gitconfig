@@ -41,6 +41,9 @@
 	l = log --oneline --decorate -30
 	ll = log --oneline --decorate
 
+	# Check for whitespace e.g. git diff --check HEAD~1
+	ws = diff --check
+
 	# commit signed
 	cs = commit -s
 
