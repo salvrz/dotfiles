@@ -295,6 +295,14 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 
+  # VTOP {{{
+
+    echo ">>>INSTALLING vtop"
+    sudo npm install -g vtop
+
+  # }}}
+
+
   # BREW {{{
       
     #echo ">>>INSTALLING brew"
