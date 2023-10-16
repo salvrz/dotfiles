@@ -303,6 +303,14 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 
+  # GTOP {{{
+
+    echo ">>>INSTALLING gtop"
+    sudo npm install -g gtop
+
+  # }}}
+
+
   # BREW {{{
       
     #echo ">>>INSTALLING brew"
