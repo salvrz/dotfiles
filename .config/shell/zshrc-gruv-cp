@@ -70,6 +70,7 @@ alias ll="ls -alF"
 alias l="ls -CF"
 alias mutttoken="sh ~/.mutt/oauth/refresh_token.sh"
 alias nmutt="neomutt"
+alias btmg="btm --color=gruvbox"
 
 #
 # Path Edits
