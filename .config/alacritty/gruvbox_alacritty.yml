@@ -296,9 +296,9 @@ colors:
     red:     '#FB4934'  # light red
     green:   '#D3869B'  # nvim search highlight: light purple
     yellow:  '#FABD2F'  # light yellow
-    blue:    '#B8BB26'  # light green
+    blue:    '#8EC07C'  # ranger dirs: light aqua
     magenta: '#83A598'  # light blue
-    cyan:    '#8EC07C'  # light aqua
+    cyan:    '#B8BB26'  # light green
     white:   '#FE8019'  # light orange
 import:
   - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
