@@ -42,6 +42,8 @@ vim.call('plug#begin', '~/.config/nvim/autoload/plugged')
 	Plug('vim-utils/vim-man')
 
 	-- Themes
+	Plug('shiztev/vim-grub')
+	Plug('habamax/vim-gruvbit')
 	Plug('nikolvs/vim-sunbather')
 
 	-- Lua fork of web devicons
