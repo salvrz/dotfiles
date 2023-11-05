@@ -282,7 +282,7 @@ colors:
   # Normal colors
   normal:
     black:   '#0D0D0D'  # background off-grey
-    red:     '#D79921'  # prompt (after error): yellow
+    red:     '#D65D0E'  # error (zsh prompt and nvim launch error guibg): orange
     green:   '#689D6A'  # ls 'sticky' dirs/files: aqua
     yellow:  '#CC241D'  # warning/ls char device files: red
     blue:    '#458588'  # ls dirs: blue
@@ -296,12 +296,12 @@ colors:
     red:     '#FB4934'  # light red
     green:   '#D3869B'  # nvim search highlight: light purple
     yellow:  '#FABD2F'  # light yellow
-    blue:    '#8EC07C'  # ranger dirs: light aqua
-    magenta: '#83A598'  # light blue
+    blue:    '#83A598'  # ranger dirs: light blue
+    magenta: '#FE8019'  # light orange
     cyan:    '#B8BB26'  # light green
-    white:   '#FE8019'  # light orange
-import:
-  - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
+    white:   '#8EC07C'  # nvim error guifg: light aqua
+      #import:
+      #- ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
 
   # Dim colors
   #
