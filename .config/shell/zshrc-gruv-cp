@@ -10,6 +10,7 @@ zstyle ':prompt:pure:path' color '#B16286' # purple
 zstyle ':prompt:pure:git:*' color '#FE8019' # light orange
 zstyle ':prompt:pure:git:branch' color '#EBDBB2' # cream
 zstyle ':prompt:pure:prompt' color '#83A598' # light blue
+zstyle ':prompt:pure:prompt:continuation' color '#EBDBB2' # cream
 zstyle ':prompt:pure:execution_time' color '#83A598' # light blue
 zstyle ':prompt:pure:user' color '#458588' # blue
 zstyle ':prompt:pure:host' color '#458588' # blue
@@ -58,12 +59,13 @@ PERL_MM_OPT="INSTALL_BASE=/home/salvar/perl5"; export PERL_MM_OPT;
 #
 # Set default editor
 #
-
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export GIT_EDITOR=nvim
+export GPG_TTY=$(tty)
 
 #
-# aliases
+# Aliases
 #
 alias ls="ls --color=auto"
 alias ll="ls -alF"
@@ -75,24 +77,12 @@ alias btmg="btm --color=gruvbox"
 #
 # Path Edits
 #
-
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@11/bin:$PATH"
-export PATH="/opt/sonarqube/bin:$PATH"
-export PATH="/opt/sonarscanner/bin:$PATH"
-export PATH="/home/salvar/DataGrip-2022.2.4/bin:$PATH"
-export PATH="/opt/clion-2022.2.3/bin:$PATH"
 
 #
 # Third party app edits
 #
-
 eval "$(direnv hook zsh)"  # for direnv use
 export RANGER_LOAD_DEFAULT_RC=false  # force ranger to use ~/.config/ranger/rc.conf
 export GCC_ARM_TOOLS_PATH=/opt/arm-gnu-toolchain-12.2/bin  # include arm gnu toolchain
-alias clion="clion.sh"  # clion alias
-alias logisim="java -jar ~/filecamp/logisim-2.3.1.jar"  # logisim alias
-export GIT_EDITOR=nvim
-export GPG_TTY=$(tty)
-
-
