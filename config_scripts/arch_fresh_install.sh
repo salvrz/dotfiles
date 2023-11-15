@@ -183,7 +183,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # ALACRITTY {{{
 
     echo ">>>INSTALLING alacritty"
-    sudo pacman -S alacritty
+    paru -S alacritty
     mkdir $client_home/.config/alacritty
     cp "${config}/terminal/alacritty-cp.yml" $client_home/.config/alacritty/alacritty.yml
 
@@ -290,8 +290,16 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # HTOP {{{
       
     echo ">>>INSTALLING htop"
-    sudo pacman -S htop
+    paru -S htop
       
+  # }}}
+
+
+  # BOTTOM {{{
+
+    echo ">>>INSTALLING bottom"
+    paru -S bottom
+
   # }}}
 
 
@@ -326,9 +334,9 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # PYTHON {{{
       
     echo ">>>INSTALLING python"
-    sudo pacman -S python
-    sudo pacman -S python-pip
-    sudo pacman -S ipython
+    sudo paru -S python
+    sudo paru -S python-pip
+    sudo paru -S ipython
     # brew install poetry
     pip install -U pytest
       
@@ -338,14 +346,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # JAVA {{{
       
     echo ">>>INSTALLING java"
-    sudo pacman -S jdk-openjdk  # most recent version of openjdk java
-    #sudo pacman -S jdk11-openjdk  # openjdk java 11
-    # CURRENTLY DOESN'T INSTALL JUNIT
-    # CURRENTLY DOESN'T INSTALL MAVEN
-    #echo ">>>INSTALLING maven"
-    # brew install maven
-    #echo ">>>CONFIGURING npm w/ angular"
-    #npm install -g @angular/cli 
+    sudo paru -S jdk11-openjdk  # openjdk java 11
       
   # }}}
 
@@ -379,8 +380,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # MUSIC (spotify & mdp) {{{
 
     echo ">>>INSTALLING spotify"
-    sudo pacman -Syu spotify-launcher
-    paru -S mpd
+    paru -S spotify-launcher
     
   # }}}
 
@@ -444,7 +444,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # VIM {{{
       
     echo ">>>INSTALLING vim"
-    sudo pacman -S vim
+    paru -S vim
     cp "${config}/vim/vimrc-cp" $client_home/.vimrc
 
     echo ">>>INSTALLING vim plugs"
@@ -460,14 +460,13 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # NVIM {{{
       
     echo ">>>INSTALLING nvim"
-    sudo pacman -S neovim
-    sudo pacman -S ranger
-    paru -S python-ueberzug-git  # This will probably fail, not sure if package is necessary
-    sudo pacman -S xsel
+    paru -S neovim
+    paru -S ranger
+    paru -S ueberzug
+    paru -S xsel
     pip install pynvim
     pip install pynvim --upgrade
     sudo npm i -g yarn
-    yay -S ueberzug
     paru -S ripgrep  # telescope.nvim dependency
     mkdir $client_home/.config/nvim
 
