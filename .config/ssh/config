@@ -1,0 +1,9 @@
+# RIT CS Server Config
+Host *.cs.rit.edu
+	User sda1341
+	IdentityFile ~/.ssh/rit_cs_key
+
+Host neon
+	HostName neon.cs.rit.edu
+	User sda1341
+	IdentityFile ~/.ssh/rit_cs_key
