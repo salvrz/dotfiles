@@ -49,26 +49,16 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
 # PARU {{{
 
-  echo ">>>INSTALLING paru"
-  git clone https://aur.archlinux.org/paru.git
-  setfacl -m u:"$1":rwx paru
-  cd paru
-  sudo -u "$1" makepkg -sri
-  cd $cwd
-  rm -rf ./paru
+  echo ">>>INSTALLING paru (ASSUMING YAY IS INSTALLED)"
+  yay -S paru
 
 # }}}
 
 
-# YAY {{{
-  
-  echo ">>>INSTALLING yay"
-  git clone https://aur.archlinux.org/yay-git.git
-  setfacl -m u:"$1":rwx yay-git
-  cd yay-git
-  sudo -u "$1" makepkg -sri
-  cd $cwd
-  rm -rf yay-git
+# UDISKIE {{{
+
+  echo ">>>INSTALLING udiskie"
+  paru -S udiskie
 
 # }}}
 
@@ -372,7 +362,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
   # SLACK {{{
     echo ">>>INSTALLING slack"
-    yay -S slack-desktop
+    paru -S slack-desktop
 
   # }}}
 
