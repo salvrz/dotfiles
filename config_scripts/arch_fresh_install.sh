@@ -549,6 +549,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
      echo ">>>CONFIGURING liquidcfg"
      cp "${config}/systemd/liquidcfg.service" /etc/systemd/system/
      systemctl enable liquidcfg.service
+     systemctl start liquidcfg.service
 
   # }}}
 
@@ -557,7 +558,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
     echo ">>>CONFIGURING udiskie"
     cp "${config}/systemd/udiskie-lifesupport.service" "${client_home}/.config/systemd/user/"
-    systemctl --user enable udiskie-lifesupport.service
+    systemctl enable --user udiskie-lifesupport.service
+    systemctl start --user udiskie-lifesupport.service
 
   # }}}
 
