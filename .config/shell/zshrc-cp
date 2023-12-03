@@ -6,13 +6,16 @@ autoload -Uz promptinit
 promptinit
 prompt pure
 # styling
-zstyle ':prompt:pure:path' color '#FF006F'
-zstyle ':prompt:pure:git:*' color '#00CDC1'
-zstyle ':prompt:pure:git:branch' color '#90837A'
-zstyle ':prompt:pure:prompt' color '#4A8089'
-zstyle ':prompt:pure:execution_time' color '#4A8089'
-zstyle ':prompt:pure:user' color '#4A8089'
-zstyle ':prompt:pure:host' color '#4A8089'
+zstyle ':prompt:pure:path' color '#B16286' # purple
+zstyle ':prompt:pure:git:*' color '#FE8019' # light orange
+zstyle ':prompt:pure:git:branch' color '#EBDBB2' # cream
+zstyle ':prompt:pure:prompt' color '#83A598' # light blue
+zstyle ':prompt:pure:prompt:continuation' color '#EBDBB2' # cream
+zstyle ':prompt:pure:execution_time' color '#83A598' # light blue
+zstyle ':prompt:pure:user' color '#458588' # blue
+zstyle ':prompt:pure:host' color '#458588' # blue
+
+PURE_PROMPT_SYMBOL="%B://%b"
 
 setopt histignorealldups sharehistory
 
@@ -71,12 +74,12 @@ alias ll="ls -alF"
 alias l="ls -CF"
 alias mutttoken="sh ~/.mutt/oauth/refresh_token.sh"
 alias nmutt="neomutt"
+alias btmg="btm --color=gruvbox"
 
 #
 # Path Edits
 #
 export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@11/bin:$PATH"
 
 #
 # Third party app edits
