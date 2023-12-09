@@ -22,5 +22,6 @@
   code --install-extension redhat.fabric8-analytics
   code --install-extension rogalmic.bash-debug
   code --install-extension rogalmic.zsh-debug
+  code --install-extension james-yu.latex-workshop
 
 # }}}
