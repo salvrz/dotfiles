@@ -10,7 +10,7 @@ else
   pwd
   sudo pacman -Syu
   sudo pacman -S --needed git
-  sudo pacman -S base-devel bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python rsync tar xz
+  sudo pacman -S base-devel bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python rsync tar xz valgrind gdb
   sudo pacman -S neofetch
 
   echo ">>>INSTALLING zsh"
