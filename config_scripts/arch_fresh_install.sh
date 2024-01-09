@@ -15,8 +15,16 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
 # KEY BINDINGS {{{
 
-  echo ">>>CONFIGURING key bindings vis sxhkd"
+  echo ">>>CONFIGURING key bindings via sxhkd"
   cp -r "${config}/sxhkd/*" $client_home/.config/sxhkd
+
+# }}}
+
+
+# PULSE AUDIO {{{
+
+  echo ">>>CONFIGURING pulse audio"
+  sudo cp -r $config/pulse/* /etc/pulse
 
 # }}}
 
