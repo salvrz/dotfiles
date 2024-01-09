@@ -175,7 +175,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     echo ">>>INSTALLING alacritty"
     paru -S alacritty
     mkdir $client_home/.config/alacritty
-    cp "${config}/terminal/alacritty-cp.yml" $client_home/.config/alacritty/alacritty.yml
+    cp "${config}/alacritty/*" $client_home/.config/alacritty/
 
   # }}}
 
