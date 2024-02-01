@@ -455,6 +455,14 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 
+  # REPGREP {{{
+
+    echo ">>>INSTALLING repgrep (nvim telescope dependency)"
+    paru -S ripgrep
+
+  # }}}
+
+
   # NVIM {{{
       
     echo ">>>INSTALLING nvim"
@@ -492,8 +500,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
     echo ">>>FINALIZE nvim plugins"
     nvim --headless +PlugInstall +qa
-    # for vimscript config:
-    # nvim --headless +'CocInstall coc-rust-analyzer coc-json coc-python coc-snippets coc-vimlsp' +qa
 
   # }}}
 
