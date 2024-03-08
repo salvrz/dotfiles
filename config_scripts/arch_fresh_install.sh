@@ -29,6 +29,16 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # }}}
 
 
+# PIPEWIRE {{{
+
+  echo ">>>CONFIGURING pipewire"
+  mkdir -p ~/.config/pipewire/pipewire.conf.d
+  cp -r "${config}/pipewire" $client_home/.config
+
+
+# }}}
+
+
 # NODEJS & NPM {{{
 
   echo ">>>INSTALLING nodejs & npm"
