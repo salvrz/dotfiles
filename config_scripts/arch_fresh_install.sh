@@ -450,7 +450,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     # CCLS {{{
 
       echo ">>>INSTALLING ccls"
-      paru -S ccls-git
+      paru -S ccls
 
     # }}}
 
