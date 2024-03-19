@@ -39,6 +39,14 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 # }}}
 
 
+# WIREPLUMBER {{{
+
+  echo ">>>CONFIGURING wireplumber"
+  cp -r "${config}/wireplumber" /etc/
+
+# }}}
+
+
 # NODEJS & NPM {{{
 
   echo ">>>INSTALLING nodejs & npm"
