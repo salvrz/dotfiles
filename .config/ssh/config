@@ -8,7 +8,17 @@ Host neon
 	User sda1341
 	IdentityFile ~/.ssh/rit_cs_key
 
+Host dsl
+	HostName dsl.cs.rit.edu
+	User sda1341
+	IdentityFile ~/.ssh/rit_cs_key
+
 Host *.dsl.cs.rit.edu
+	User sda1341
+	ProxyJump dsl.cs.rit.edu
+	IdentityFile ~/.ssh/rit_cs_key
+
+Host drebber
 	User sda1341
 	ProxyJump dsl.cs.rit.edu
 	IdentityFile ~/.ssh/rit_cs_key
