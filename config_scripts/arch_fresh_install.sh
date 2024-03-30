@@ -35,7 +35,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   mkdir -p ~/.config/pipewire/pipewire.conf.d
   cp -r "${config}/pipewire" $client_home/.config
 
-
 # }}}
 
 
@@ -188,7 +187,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   sudo rm -rf *
   fc-cache
   cd $cwd
-    
+
 # }}}
 
 
@@ -315,22 +314,6 @@ cp "${config}/xresources-cp" $client_home/.Xresources
 
     echo ">>>INSTALLING bottom"
     paru -S bottom
-
-  # }}}
-
-
-  # VTOP {{{
-
-    echo ">>>INSTALLING vtop"
-    sudo npm install -g vtop
-
-  # }}}
-
-
-  # GTOP {{{
-
-    echo ">>>INSTALLING gtop"
-    sudo npm install -g gtop
 
   # }}}
 
@@ -481,11 +464,18 @@ cp "${config}/xresources-cp" $client_home/.Xresources
   # }}}
 
 
+  # RANGER {{{
+
+    echo ">>>INSTALLING ranger"
+    paru -S ranger
+
+  # }}}
+
+
   # NVIM {{{
       
     echo ">>>INSTALLING nvim"
     paru -S neovim
-    paru -S ranger
     paru -S ueberzug
     paru -S xsel
     pip install pynvim
@@ -524,15 +514,15 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
   # POLYBAR {{{
   
-    echo ">>>CONFIGURING polybar"
-    paru -S ttf-iosevka-nerd
-    git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-    mv ./polybar-themes $client_home/polybar-themes
-    cd $client_home/polybar-themes
-    chmod +x setup.sh
-    ./setup.sh
-    cd $cwd
-    cp -r "${config}/polybar/*" $client_home/.config/polybar/
+    #echo ">>>CONFIGURING polybar"
+    #paru -S ttf-iosevka-nerd
+    #git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+    #mv ./polybar-themes $client_home/polybar-themes
+    #cd $client_home/polybar-themes
+    #chmod +x setup.sh
+    #./setup.sh
+    #cd $cwd
+    #cp -r "${config}/polybar/*" $client_home/.config/polybar/
   
   # }}}
 
