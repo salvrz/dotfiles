@@ -17,36 +17,30 @@
 # Email config
 #
 [sendemail]
-	smtpserver	= smtp.gmail.com
-	smtpserverport	= 587
-	smtpencryption	= tls
-	from		= Stevie Alvarez <stevie.6strings@gmail.com>
-	smtpuser	= stevie.6strings@gmail.com
-	# smtppass = <retrieved via credential manager>
-	confirm		= always
+	smtpserver		= smtp.gmail.com
+	smtpserverport		= 587
+	smtpencryption		= tls
+	from			= Stevie Alvarez <stevie.6strings@gmail.com>
+	smtpuser		= stevie.6strings@gmail.com
+	# smtppass		= <retrieved via credential manager>
+	confirm			= always
 [http]
-	sslAutoClientCert = true
+	sslAutoClientCert	= true
 
 #
 # Workflow config
 #
 [merge]
 	# git mergetool
-	tool = vimdiff
+	tool	= vimdiff
 [rebase]
 	# auto relocate squash to respective commit to squash to
-	autoSquash = true
+	autoSquash	= true
 [alias]
 	# Simple commit history
-	l = log --oneline --decorate -30
-	ll = log --oneline --decorate
-
-	# Check for whitespace e.g. git diff --check HEAD~1
-	ws = diff --check
+	l	= log --oneline --decorate -30
+	ll	= log --oneline --decorate
+	lt	= log --all --graph --decorate --oneline
 
 	# commit signed
-	cs = commit -s
-
-	# Interactive rebase
-	ri = rebase -i
-	rim = rebase -i master
+	cs	= commit -s
