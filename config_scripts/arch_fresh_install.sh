@@ -478,8 +478,7 @@ cp "${config}/xresources-cp" $client_home/.Xresources
     paru -S neovim
     paru -S ueberzug
     paru -S xsel
-    pip install pynvim
-    pip install pynvim --upgrade
+    paru -S python-pynvim
     sudo npm i -g yarn
     paru -S ripgrep  # telescope.nvim dependency
     mkdir $client_home/.config/nvim
