@@ -558,6 +558,23 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
   # }}}
 
+
+  # QMK {{{
+
+    echo ">>>INSTALLING qmk-git"
+
+    # reference: https://docs.qmk.fm/#/newbs_building_firmware
+
+    paru -S qmk-git
+
+    qmk setup -H $client_home/.config/qmk_firmware
+    qmk config user.keyboard=boardsource/unicorne
+    qmk config user.keymap=salvar_colemak_dh_matrix
+
+    cp -r "${config}/qmk_firmware" $client_home/.config
+
+  # }}}
+
 # }}}
 
 
