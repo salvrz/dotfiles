@@ -565,7 +565,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
     # reference: https://docs.qmk.fm/#/newbs_building_firmware
 
-    paru -S qmk-git
+    sudo pacman -S qmk
 
     qmk setup -H $client_home/.config/qmk_firmware
     qmk config user.keyboard=boardsource/unicorne
