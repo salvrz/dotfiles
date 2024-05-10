@@ -43,11 +43,11 @@
       "KC_DOT",
       "KC_SLSH",
       "KC_GRV",
+      "KC_LGUI",
       "MO(1)",
-      "KC_LCTL",
       "KC_SPC",
       "KC_ENT",
-      "KC_LGUI",
+      "KC_LCTL",
       "KC_RALT"
     ],
     [
@@ -63,7 +63,7 @@
       "KC_9",
       "KC_0",
       "KC_TRNS",
-      "KC_TRNS",
+      "KC_LGUI",
       "KC_EXLM",
       "KC_AT",
       "KC_HASH",
