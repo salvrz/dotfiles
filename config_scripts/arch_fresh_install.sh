@@ -567,11 +567,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
     sudo pacman -S qmk
 
+    git clone git@github.com:Shiztev/qmk_firmware.git $client_home/.config/qmk_firmware
     qmk setup -H $client_home/.config/qmk_firmware
     qmk config user.keyboard=boardsource/unicorne
     qmk config user.keymap=salvar_colemak_dh_matrix
-
-    cp -r "${config}/qmk_firmware" $client_home/.config
 
   # }}}
 
