@@ -11,7 +11,7 @@ vim.opt.iskeyword:append { '-' }	-- Treat dash separated words as a word text ob
 vim.opt.fileencoding	= "utf-8"	-- Encoding written to a file
 vim.opt.splitbelow	= true		-- Horizontal splits will automatically be below
 vim.opt.splitright	= true		-- Vertical splits will automatically be to the right
-vim.o.noshowmode	= true		-- Don't display mode (eg INSERT)
+--vim.opt.showmode	= false		-- Don't display mode (eg INSERT)
 vim.opt.clipboard	= "unnamedplus"	-- Copy paste between vim and everything else
 -- vim.opt.nobackup	= true		-- Recommended by coc
 -- vim.opt.nowritebackup	= true		-- Recommended by coc
@@ -24,7 +24,7 @@ vim.opt.timeoutlen	= 500		-- Default timeoutlen is 1000 ms
 vim.o.tabstop		= 8		-- Tab spacing
 vim.o.softtabstop	= 8		--
 vim.o.shiftwidth	= 8		-- Number of space characters inserted for indentation
-vim.o.noexpandtab	= true		-- Use tabs over spaces for indentation
+vim.opt.expandtab	= false		-- Use tabs over spaces for indentation
 vim.opt.smarttab	= true		-- Makes indenting smart
 vim.opt.autoindent	= true		-- Good auto indent
 vim.opt.showtabline	= 2		-- Always show tabs
