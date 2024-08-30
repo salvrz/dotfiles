@@ -1,0 +1,18 @@
+{
+  "rust-analyzer.hover.documentation.enable": true,
+  "languageserver": {
+      "rust": {
+        "command": "rust-analyzer",
+        "filetypes": ["rust"],
+        "rootPatterns": ["Cargo.toml"]
+      }
+      "csharp-ls": {
+        "command": "csharp-ls",
+        "filetypes": ["cs"],
+        "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+      }
+  },
+  "omnisharp.version": "v1.37.3",
+  "omnisharp.trace.server": "information",
+  "omnisharp.debug.server": true
+}

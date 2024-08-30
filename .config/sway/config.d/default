@@ -146,6 +146,8 @@ exec swayidle -w\
 
 	# Move focus to the parent container
 	bindsym $mod+a focus parent
+
+	bindsym $mod+z focus child
 #
 # Scratchpad:
 #
@@ -165,10 +167,10 @@ exec swayidle -w\
 	# right will grow the containers width
 	# up will shrink the containers height
 	# down will grow the containers height
-	bindsym $mod+Ctrl+$left resize shrink width 10px
-	bindsym $mod+Ctrl+$right resize grow width 10px
-	bindsym $mod+Ctrl+$up resize shrink height 10px
-	bindsym $mod+Ctrl+$down resize grow height 10px
+	bindsym $mod+Ctrl+$left resize shrink width 70px
+	bindsym $mod+Ctrl+$right resize grow width 70px
+	bindsym $mod+Ctrl+$up resize shrink height 70px
+	bindsym $mod+Ctrl+$down resize grow height 70px
 
 mode "resize" {
 	# left will shrink the containers width
