@@ -1,0 +1,135 @@
+# my mutt config
+
+# force tls -> implicit tls over 465 (IETF preferred)
+# starttls -> tls over 587 (not IETF preferred)
+set ssl_force_tls = yes
+set folder="imaps://imap.gmail.com:993"
+set spoolfile="+INBOX"
+set postponed="+[Gmail]/Drafts"
+set from=stevie.6strings@gmail.com
+set realname="Stevie Alvarez"
+set imap_authenticators="oauthbearer"
+set imap_user="stevie.6strings@gmail.com"
+set smtp_authenticators=${imap_authenticators}
+set smtp_url="smtps://stevie.6strings@gmail.com@smtp.gmail.com:465"
+set imap_oauth_refresh_command="python3 /home/$LOGNAME/.mutt/oauth/mutt_oauth2.py /home/$LOGNAME/.mutt/oauth/my_gmail.token"
+set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
+
+# Header cache, to speed things up.
+set header_cache = /home/$LOGNAME/.local/Mail/mutt_header_cache
+set message_cachedir = /home/$LOGNAME/.local/Mail/mutt_message_cache
+
+# COMMON SETTINGS
+set copy=no
+set move=no
+unset record
+
+# IMAP fine-tuning.
+unset imap_passive
+set imap_check_subscribed
+set mail_check=60
+
+# random settings
+set trash='[Gmail]/Trash'
+unset record
+unset imap_passive
+set move=no
+set copy=no
+set record="+[Gmail]/Sent Mail"
+set postponed="+[Gmail]/Drafts"
+set pager_stop=yes
+set envelope_from=yes
+set pager_context=4
+set pager_index_lines=6
+#set editor="vim -c 'set bg=light'"
+set editor=nvim
+set visual=nvim 
+set sort=threads
+set sort=reverse-threads
+set delete=yes
+set confirmappend=no
+set confirmcreate=no
+set pop_delete=yes
+set pager_format="(%P) -- Received %[!%A %b %e at %I:%M %p]"
+set index_format="%3C %Z %[%b %d] %-15.15L %s"
+#set index_format="%3C %[%b %d] %-15.15L %s"
+
+ignore user-agent x-mailer x-url
+unhdr_order *
+hdr_order Date: From: To: Reply-To: Cc: Subject:
+
+# clear g binding for neomutt
+bind pager,index g noop
+
+# Replicate using vi and gmail as much as possible
+bind index j "next-entry"
+bind index k "previous-entry"
+bind index <return> "display-message"
+bind index o "display-message"
+#bind index O "sort-mailbox"
+bind index gg "first-entry"
+bind index G "last-entry"
+bind index x "tag-entry"
+bind index X "tag-thread"
+bind index J "next-thread"
+bind index K "previous-thread"
+bind index z "collapse-thread"
+
+bind pager j "next-line"
+bind pager k "previous-line"
+bind pager G "bottom"
+bind pager gg "top"
+bind pager u "exit"
+
+bind pager,index n "search-next"
+bind pager,index N "search-opposite"
+bind pager,index <Down> "next-entry"
+bind pager,index <Up> "previous-entry"
+bind pager,index \cj "next-entry"
+bind pager,index \ck "previous-entry"
+bind pager,index <tab> "next-entry"
+bind pager,index <backtab> "previous-entry"
+bind pager,index \ce "next-line"
+bind pager,index \cy "previous-line"
+bind pager,index c "mail"
+bind pager,index C "change-folder"
+bind pager,index y "delete-message"
+bind pager,index Y "delete-thread"
+bind pager,index e "delete-message"
+bind pager,index E "delete-thread"
+bind pager,index r "reply"
+bind pager,index f "reply"
+bind pager,index a "group-reply"
+bind pager,index U "undelete-thread"
+bind pager,index \ca "create-alias"
+bind pager,index v view-attachments
+bind pager,index m save-message
+bind pager,index \# noop
+bind pager,index $ noop 
+bind pager,index p noop
+bind index I sidebar-toggle-visible
+bind index J sidebar-next
+bind index K sidebar-prev
+bind index O sidebar-open
+
+macro index \cr "<sync-mailbox><imap-fetch-mail>"
+bind pager,index [ delete-message
+macro pager,index ] "<delete-message><previous-undeleted>"
+macro pager \cr "<exit><sync-mailbox><imap-fetch-mail><enter>"
+macro index \cf "<sync-mailbox><imap-fetch-mail>"
+macro pager \cf "<exit><sync-mailbox><imap-fetch-mail><enter>"
+macro pager i ":set pager_index_lines=0\n"
+macro pager I ":set pager_index_lines=6\n"
+macro pager,index gi "<change-folder>=INBOX\n" 		"Go to inbox"
+macro pager,index gp "<change-folder>=patch<enter>" 	"Go to patches"
+macro index <Esc>d "<delete-pattern>~=<enter>" "Delete duplicates"
+macro pager,index M "<tag-thread><tag-prefix><save-message>" "Move thread"
+macro pager,index \cu "<half-up><redraw-screen>"
+macro pager,index \cd "<half-down><redraw-screen>"
+macro index S "<tag-prefix><copy-message>~/patch/thread\n!cd ~/patch && ~/bin/_split_email ~/patch/thread && rm ~/patch/thread\n"
+macro pager,index s "!rm -f ~/patch/out.patch && echo 'exporting to ~/patch/out.patch'\n<copy-message>~/patch/out.patch\n"
+# Review patch in ~/project/review
+#macro pager,index R "!rm -f ~/patch/out.patch && echo 'exporting to ~/patch/out.patch'\n<copy-message>~/patch/out.patch\n!cd ~/project/review && git am ~/patch/out.patch\n"
+#macro pager,index L "!rm -f ~/patch/out.patch && echo 'exporting to ~/patch/out.patch'\n<copy-message>~/patch/out.patch\n!cd ~/project/linux && git am ~/patch/out.patch\n"
+macro index 4 "<pipe-message>b4 mbox -fo ~/Mail<return>"
+
