@@ -1,6 +1,7 @@
 --
 -- Require config modules
 --
+--require('colemak')
 require('vim-plug')			-- Plugins
 require('general')			-- General settings
 require('keys')				-- Key bindings

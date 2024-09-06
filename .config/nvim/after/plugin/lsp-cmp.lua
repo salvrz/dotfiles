@@ -4,17 +4,17 @@
 local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
-	'lua_ls',
-	'rust_analyzer',
+    'lua_ls',
+    'rust_analyzer',
 })
 
 lsp.on_attach(function(client, bufnr)
-	-- see :help lsp-zero-keybindings
-	-- to learn the avaiable actions
-	lsp.default_keymaps({
-		buffer = bufnr,
-		preserve_mappings = false  -- override default lsp keymappings
-	})
+    -- see :help lsp-zero-keybindings
+    -- to learn the avaiable actions
+    lsp.default_keymaps({
+        buffer = bufnr,
+        preserve_mappings = false  -- override default lsp keymappings
+    })
 end)
 
 -- lua lsp for nvim
@@ -36,45 +36,45 @@ end
 
 local cmp = require('cmp')
 cmp.setup({
-	formatting = {
-		format = function(entry, vim_item)
-			-- shorten the item description
-			vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
-			-- make rust items consistent
-			vim_item.menu = nil
-			return vim_item
-		end
-	},
-	mapping = {
-		-- Scroll through documentation
-		['<M-u>'] = cmp.mapping.scroll_docs(-4),
-		['<M-i>'] = cmp.mapping.scroll_docs(4),
+    formatting = {
+        format = function(entry, vim_item)
+            -- shorten the item description
+            vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
+            -- make rust items consistent
+            vim_item.menu = nil
+            return vim_item
+        end
+    },
+    mapping = {
+        -- Scroll through documentation
+        ['<M-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<M-i>'] = cmp.mapping.scroll_docs(4),
 
-		-- `Enter` to confirm completion
-		['<CR>'] = cmp.mapping.confirm( {select = false} ),
+        -- `Enter` to confirm completion
+        ['<CR>'] = cmp.mapping.confirm( {select = false} ),
 
-		-- Tab to go down autocomplete options
-		['<Tab>'] = function(fallback)
-			if not cmp.select_next_item() then
-				if vim.bo.buftype ~= 'prompt' and has_words_before() then
-					cmp.complete()
-				else
-					fallback()
-				end
-			end
-		end,
+        -- Tab to go down autocomplete options
+        ['<Tab>'] = function(fallback)
+            if not cmp.select_next_item() then
+                if vim.bo.buftype ~= 'prompt' and has_words_before() then
+                    cmp.complete()
+                else
+                    fallback()
+                end
+            end
+        end,
 
-		-- Shift+Tab to go up autocomplete options
-		['<S-Tab>'] = function(fallback)
-			if not cmp.select_prev_item() then
-				if vim.bo.buftype ~= 'prompt' and has_words_before() then
-					cmp.complete()
-				else
-					fallback()
-				end
-			end
-		end,
-	}
+        -- Shift+Tab to go up autocomplete options
+        ['<S-Tab>'] = function(fallback)
+            if not cmp.select_prev_item() then
+                if vim.bo.buftype ~= 'prompt' and has_words_before() then
+                    cmp.complete()
+                else
+                    fallback()
+                end
+            end
+        end,
+    }
 })
 
 
@@ -85,24 +85,24 @@ cmp.setup({
 -- rust-tools (rust-analyzer)
 local rust_tools = require('rust-tools')
 rust_tools.setup({
-	server = {
-		on_attach = function(_, bufnr)
-			vim.keymap.set('n', '<space>l', rust_tools.hover_actions.hover_actions, {buffer = bufnr})
-		end
-	}
+    server = {
+        on_attach = function(_, bufnr)
+            vim.keymap.set('n', '<space>l', rust_tools.hover_actions.hover_actions, {buffer = bufnr})
+        end
+    }
 })
 vim.g.rust_recommended_style = false
 
 
 -- ccls
 require'lspconfig'.ccls.setup {
-	init_options = {
-		compilationDatabaseDirectory = "build";
-		index = {
-			thread = 0;
-		};
-		clang = {
-			excludeArgs = { "-frounding-math" };
-		};
-	}
+    init_options = {
+        compilationDatabaseDirectory = "build";
+        index = {
+            thread = 0;
+        };
+        clang = {
+            excludeArgs = { "-frounding-math" };
+        };
+    }
 }
