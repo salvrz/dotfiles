@@ -26,6 +26,6 @@
     cp -r $cwd/home/* $client_home
 
     echo "\t...copying root"
-    sudo cp -r $cwd/root /
+    sudo cp -r $cwd/root/* /
 
 # }}}

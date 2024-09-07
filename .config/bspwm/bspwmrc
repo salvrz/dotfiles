@@ -56,9 +56,9 @@ xsetroot -cursor_name left_ptr &
 ~/.config/bspwm/scripts/low_bat_notifier.sh &
 
 # Set peripheral settings
-xrandr --output DisplayPort-0 --mode 1920x1080 --rate 164.96
-xinput set-prop 9 'libinput Accel Speed' 0
-xinput set-prop 9 'libinput Accel Profile Enabled' 0 1 0
+# xrandr --output DisplayPort-0 --mode 1920x1080 --rate 164.96 &
+# xinput set-prop 9 'libinput Accel Speed' 0 &
+# xinput set-prop 9 'libinput Accel Profile Enabled' 0 1 0 &
 
 # System monitor
 exec alacritty -e btm
