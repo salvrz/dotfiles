@@ -25,14 +25,6 @@
 # }}}
 
 
-# AUDIO {{{
-
-    echo ">>>INSTALLING wireplumber"
-    paru -S wireplumber
-
-# }}}
-
-
 # LANGUAGES {{{
 
     echo ">>>INSTALLING languages & package managers"
@@ -65,6 +57,28 @@
         #git clone https://github.com/rust-lang/rust-analyzer.git
         #cd rust-analyzer
         #cargo xtask install
+
+    # }}}
+
+# }}}
+
+
+# SYSTEM SOFTWARE {{{
+
+    echo ">>>INSTALLING system software"
+
+    # AUDIO {{{
+
+        echo "\t...wireplumber"
+        paru -S wireplumber
+    
+    # }}}
+
+
+    # UDISKIE {{{
+
+        echo "\t...udiskie"
+        paru -S udiskie
 
     # }}}
 
