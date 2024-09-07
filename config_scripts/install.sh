@@ -88,6 +88,13 @@
 # PERSONAL SOFTWARE {{{
 
     echo ">>>INSTALLING personal software"
+    # ZSH {{{
+
+        echo "\t...pure (zsh)"
+        mkdir -p $client_home/.zsh
+        sudo git clone https://github.com/sindresorhus/pure.git $client_home/.zsh/pure
+
+    # }}}
 
 # }}}
 
