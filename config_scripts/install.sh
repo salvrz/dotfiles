@@ -85,9 +85,16 @@
 # }}}
 
 
+# PERSONAL SOFTWARE {{{
+
+    echo ">>>INSTALLING personal software"
+
+# }}}
+
+
 # DOTFILES {{{
 
-    echo ">>>COPYING DOTFILES"
+    echo ">>>COPYING dotfiles"
 
     echo "\t...copying ${1}'s home dir"
     cp -r $cwd/home/* $client_home
