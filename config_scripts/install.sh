@@ -10,5 +10,7 @@ echo ">>>INSTALLING direnv"
 sudo pacman -S direnv
 
 echo ">>>COPYING DOTFILES"
+echo "\t...copying ${1}'s home directory"
 cp -r $cwd/home/* $client_home
-# TOOD: copy over non-home dir dots
+echo "\t...copying root"
+sudo cp -r $cwd/root /
