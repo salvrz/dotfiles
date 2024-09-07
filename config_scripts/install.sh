@@ -96,6 +96,39 @@
 
     # }}}
 
+
+    # GIT CREDENTIALS {{{
+
+        echo "...git credential management"
+        paru -S gnupg
+        paru -S pinentry  # gnupg uses for password prompt
+        paru -S pass
+        paru -S git-credential-manager-core
+        cpan Authen::SASL MIME::Base64 Net::SMTP::SSL
+
+        # FOR UBUNTU: install gcm via tarball from github
+
+        echo ">>>CONFIGURING git credential manager"
+        cp "${cwd}/home/.config/.gitconfig" $client_home/.gitconfig
+        git-credential-manager configure
+
+        echo ">>>UPDATE run \`pass init <gpg-id>\` with the gpg id generated bellow. Press enter when you're done."
+        echo ">>>HINT use the key-code after the \'pub\' identifier for the id."
+        gpg --gen-key
+        read -n 1 -s  # wait for user input
+        # user should run pass init <gpg-id> here
+
+        echo ">>>UPDATE you must configure google apppasswords to send email via git. See step 4 of this guide:\nhttps://stackoverflow.com/questions/68238912/how-to-configure-and-use-git-send-email-to-work-with-gmail-to-email-patches-to"
+        echo ">>>After you generate an apppassword, create a patch and use git-email to send it to yourself. Enter the password when prompted."
+        echo ">>>Press enter when you're done."
+        read -n 1 -s  # wait for user input
+
+        echo ">>>UPDATE you must configure an ssh key with github. See:\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+        echo ">>>Press enter when you're done."
+        read -n 1 -s  # wait for user input
+
+    # }}}
+
 # }}}
 
 
