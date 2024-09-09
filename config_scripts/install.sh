@@ -196,6 +196,14 @@
     # }}}
 
 
+    # MESSAGING {{{
+
+    echo "...messaging apps (discord, etc.)"
+    paru -S discord slack-desktop
+
+    # }}}
+
+
     # VSCODE {{{
 
       echo "...vscode"
