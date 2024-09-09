@@ -20,7 +20,7 @@
 # DIRENV {{{
 
     echo ">>>INSTALLING direnv"
-    sudo pacman -S direnv
+    paru -S direnv
 
 # }}}
 
@@ -32,8 +32,8 @@
     # NODEJS & NPM {{{
 
         echo "\t...nodejs & npm"
-        sudo pacman -S nodejs
-        sudo pacman -S npm
+        paru -S nodejs
+        paru -S npm
 
     # }}}
 
@@ -41,7 +41,7 @@
     # RUST {{{
 
         echo "\t...rust"
-        sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
         # TODO this doesn't quite work, 
 
@@ -92,7 +92,7 @@
 
         echo "\t...pure (zsh)"
         mkdir -p $client_home/.zsh
-        sudo git clone https://github.com/sindresorhus/pure.git $client_home/.zsh/pure
+        git clone https://github.com/sindresorhus/pure.git $client_home/.zsh/pure
 
     # }}}
 
