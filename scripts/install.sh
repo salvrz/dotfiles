@@ -261,9 +261,9 @@
 
     # VSCODE {{{
 
-      echo "\t...vscode"
-      paru -S visual-studio-code-bin
-      sh ./vscode_extensions.sh
+        echo "\t...vscode"
+        paru -S visual-studio-code-bin
+        sh ./vscode_extensions.sh
 
     # }}}
 
