@@ -70,6 +70,14 @@
 
     # }}}
 
+
+    # JAVA {{{
+
+        echo ">>>INSTALLING java"
+        sudo paru -S jdk11-openjdk  # openjdk java 11
+
+    # }}}
+
 # }}}
 
 
