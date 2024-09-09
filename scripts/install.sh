@@ -17,14 +17,6 @@
 # }}}
 
 
-# DIRENV {{{
-
-    echo ">>>INSTALLING direnv"
-    paru -S direnv
-
-# }}}
-
-
 # LANGUAGES {{{
 
     echo ">>>INSTALLING languages & package managers"
@@ -114,6 +106,15 @@
 # PERSONAL SOFTWARE {{{
 
     echo ">>>INSTALLING personal software"
+
+    # DIRENV {{{
+
+        echo "\t...direnv"
+        paru -S direnv
+
+    # }}}
+
+
     # ZSH {{{
 
         echo "\t...pure (zsh)"
