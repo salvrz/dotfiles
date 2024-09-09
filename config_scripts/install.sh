@@ -132,6 +132,50 @@
 # }}}
 
 
+# FONTS {{{
+
+    echo ">>>INSTALLING fonts"
+    echo"\t...IBM Plex Mono"
+    echo"\t...NERDFont Blex"
+    echo"\t...Font Awesome"
+    # prep dirs
+    sudo mkdir -p /usr/local/share/fonts
+    sudo mkdir -p /usr/share/fonts/opentype
+
+    # fetch fonts
+    curl -fsLO --output-dir ./downloads/ --create-dirs https://github.com/IBM/plex/releases/download/v6.0.0/TrueType.zip
+    # NERDFonts are NECESSARY for ranger icons to work
+    curl -fsLO --output-dir ./downloads/ --create-dirs https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IBMPlexMono.zip
+    curl -fsLO --output-dir ./downloads/ --create-dirs https://use.fontawesome.com/releases/v6.2.0/fontawesome-free-6.2.0-desktop.zip
+
+    cd ./downloads
+
+    # unzip fonts
+    unzip TrueType.zip
+    unzip IBMPlexMono.zip
+    unzip fontawesome-free-6.2.0-desktop.zip
+
+    # remove zips/conflicting fonts
+    rm TrueType.zip
+    rm IBMPlexMono.zip
+    rm Blex*Compatible.ttf
+    rm fontawesome-free-6.2.0-desktop.zip
+
+    # download fonts
+    sudo mv ./TrueType/IBM-Plex-Mono/*.ttf /usr/local/share/fonts/
+    sudo mv ./fontawesome-free-6.2.0-desktop/otfs/* /usr/share/fonts/opentype/
+    rm -rf TrueType/
+    rm -rf fontawesome-free-6.2.0-desktop/
+    sudo mv * /usr/local/share/fonts/
+
+    # cleanup
+    fc-cache
+    cd $cwd
+    rm -rf ./downloads
+
+# }}}
+
+
 # DOTFILES {{{
 
     echo ">>>COPYING dotfiles"
