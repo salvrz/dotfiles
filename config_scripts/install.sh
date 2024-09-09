@@ -2,7 +2,7 @@
 
 # SETUP {{{
 
-    echo ">>>SETUP..."
+    echo ">>>SETUP"
     cwd=$(pwd)
     config="${cwd}/.config"
     client_home="/home/${1}"
@@ -71,7 +71,7 @@
 
     # PYTHON {{{
 
-        echo "...python"
+        echo "\t...python"
         paru -S python python-pip ipython
         # brew install poetry
         pip install -U pytest
@@ -81,7 +81,7 @@
 
     # JAVA {{{
 
-        echo ">>>INSTALLING java"
+        echo "\t...java"
         sudo paru -S jdk11-openjdk  # openjdk java 11
 
     # }}}
@@ -125,7 +125,7 @@
 
     # ALACRITTY {{{
 
-        echo "...alacritty"
+        echo "\t...alacritty"
         paru -S alacritty
 
     # }}}
@@ -133,7 +133,7 @@
 
     # GIT CREDENTIALS {{{
 
-        echo "...git credential management"
+        echo "\t...git credential management"
         paru -S gnupg
         paru -S pinentry  # gnupg uses for password prompt
         paru -S pass
@@ -166,7 +166,7 @@
 
     # SCREEN {{{
 
-        echo "...screen"
+        echo "\t...screen"
         paru -S screen
 
     # }}}
@@ -174,7 +174,7 @@
 
     # DOCUMENTATION {{{
 
-        echo "...asciidoc and xmlto"
+        echo "\t...asciidoc and xmlto"
         paru -S asciidoc xmlto
 
     # }}}
@@ -182,7 +182,7 @@
 
     # QALCULATE! {{{
 
-        echo "...qualculate"
+        echo "\t...qualculate"
         paru -S qalculate-gtk
 
     # }}}
@@ -190,7 +190,7 @@
 
     # HTOP {{{
 
-        echo "...htop"
+        echo "\t...htop"
         paru -S htop
 
     # }}}
@@ -198,7 +198,7 @@
 
     # BOTTOM {{{
 
-        echo "...bottom"
+        echo "\t...bottom"
         paru -S bottom
 
     # }}}
@@ -206,7 +206,7 @@
 
     # MESSAGING {{{
 
-    echo "...messaging apps (discord, etc.)"
+    echo "\t...messaging apps (discord, etc.)"
     paru -S discord slack-desktop
 
     # }}}
@@ -214,7 +214,7 @@
 
     # VSCODE {{{
 
-      echo "...vscode"
+      echo "\t...vscode"
       paru -S visual-studio-code-bin
       sh "${config}/vscode/extensions.sh"
 
@@ -223,7 +223,7 @@
 
     # MUSIC {{{
 
-    echo "...spotify"
+    echo "\t...spotify"
     paru -S spotify-launcher
 
     # }}}
@@ -231,7 +231,7 @@
 
     # INTERNET {{{
 
-        echo "...internet utils"
+        echo "\t...internet utils"
         paru -S networkmanager nmtui
 
     # }}}
@@ -239,7 +239,7 @@
 
     # MUTT/NEOMUTT {{{
 
-      echo "...mutt and neomutt"
+      echo "\t...mutt and neomutt"
       paru -S mutt
       paru -S neomutt
 
