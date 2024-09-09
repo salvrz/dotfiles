@@ -220,6 +220,22 @@
     # }}}
 
 
+    # REPGREP {{{
+
+        echo "...repgrep (nvim telescope dependency)"
+        paru -S ripgrep
+
+    # }}}
+
+
+    # RANGER {{{
+
+        echo "...ranger"
+        paru -S ranger
+
+    # }}}
+
+
     # INTERNET {{{
 
         echo "\t...internet utils"
