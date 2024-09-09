@@ -389,6 +389,21 @@
 # }}}
 
 
+# SYSTEM DAEMONS {{{
+
+    echo">>>INSTALLING system daemons"
+
+    # UDISKIE {{{
+
+        echo "\t...udiskie"
+        systemctl enable --user udiskie-lifesupport.service
+        systemctl start --user udiskie-lifesupport.service
+
+    # }}}
+
+# }}}
+
+
 # WALLPAPERS {{{
 
     echo ">>>SETTING UP wallpapers"
