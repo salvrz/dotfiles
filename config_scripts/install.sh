@@ -38,6 +38,14 @@
     # }}}
 
 
+    # C {{{
+
+        echo "\t...C lang utils"
+        paru -S cscope cmake llvm clang ccls
+
+    # }}}
+
+
     # RUST {{{
 
         echo "\t...rust"
