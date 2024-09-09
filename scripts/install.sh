@@ -319,7 +319,7 @@ fi
 
         echo "\t...vscode"
         paru -S visual-studio-code-bin
-        sh ./vscode_extensions.sh
+        sh $cwd/scripts/vscode_extensions.sh
 
     # }}}
 
