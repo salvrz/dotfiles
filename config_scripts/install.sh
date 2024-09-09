@@ -97,6 +97,14 @@
     # }}}
 
 
+    # ALACRITTY {{{
+
+        echo "...alacritty"
+        paru -S alacritty
+
+    # }}}
+
+
     # GIT CREDENTIALS {{{
 
         echo "...git credential management"
