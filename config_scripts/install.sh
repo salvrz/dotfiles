@@ -196,6 +196,15 @@
     # }}}
 
 
+    # VSCODE {{{
+
+      echo "...vscode"
+      paru -S visual-studio-code-bin
+      sh "${config}/vscode/extensions.sh"
+
+    # }}}
+
+
     # INTERNET {{{
 
         echo "...internet utils"
