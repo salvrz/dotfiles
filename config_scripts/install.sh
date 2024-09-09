@@ -154,6 +154,30 @@
     # }}}
 
 
+    # QALCULATE! {{{
+
+        echo "...qualculate"
+        paru -S qalculate-gtk
+
+    # }}}
+
+
+    # HTOP {{{
+
+        echo "...htop"
+        paru -S htop
+
+    # }}}
+
+
+    # BOTTOM {{{
+
+        echo "...bottom"
+        paru -S bottom
+
+    # }}}
+
+
     # INTERNET {{{
 
         echo "...internet utils"
