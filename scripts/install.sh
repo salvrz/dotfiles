@@ -1,13 +1,26 @@
-#! /bin/zsh
+#! /bin/bash
+
+echo ">>>ARCH-BASED DISTRO"
+# ensure admin username provided
+if [[ $# -lt 0 ]]; then
+  echo "Usage: sh install.sh <ADMIN_USERNAME>"
+  exit 1
+fi
+
 
 # SETUP {{{
 
     echo ">>>SETUP"
+    sudo pacman -Syu
+    sudo pacman -S --needed git
+    sudo pacman -S base-devel bc coreutils cpio gettext initramfs kmod libelf ncurses pahole perl python rsync tar xz valgrind gdb neofetch
+
     cwd=$(pwd)
     config="${cwd}/.config"
     client_home="/home/${1}"
 
 # }}}
+
 
 # PARU {{{
 
@@ -118,6 +131,8 @@
     # ZSH {{{
 
         echo "\t...pure (zsh)"
+        paru -S zsh
+        sudo usermod --shell $(which zsh) "$1"
         mkdir -p $client_home/.zsh
         git clone https://github.com/sindresorhus/pure.git $client_home/.zsh/pure
 
@@ -207,16 +222,16 @@
 
     # MESSAGING {{{
 
-    echo "\t...messaging apps (discord, etc.)"
-    paru -S discord slack-desktop
+        echo "\t...messaging apps (discord, etc.)"
+        paru -S discord slack-desktop
 
     # }}}
 
 
     # MUSIC {{{
 
-    echo "\t...spotify"
-    paru -S spotify-launcher
+        echo "\t...spotify"
+        paru -S spotify-launcher
 
     # }}}
 
@@ -271,25 +286,25 @@
 
     # MUTT/NEOMUTT {{{
 
-      echo "\t...mutt and neomutt"
-      paru -S mutt
-      paru -S neomutt
+        echo "\t...mutt and neomutt"
+        paru -S mutt
+        paru -S neomutt
 
-      mkdir $client_home/.mutt
-      mkdir $client_home/patch  # dir to save patches from mutt to
+        mkdir $client_home/.mutt
+        mkdir $client_home/patch  # dir to save patches from mutt to
 
-      #curl https://gitlab.com/api/v4/projects/4815250/repository/files/contrib%2fmutt_oauth2.py/raw\?ref\=master > $client_home/.mutt/mutt_oauth2.py
-      cp -r "${cwd}/home/.mutt" $client_home
+        #curl https://gitlab.com/api/v4/projects/4815250/repository/files/contrib%2fmutt_oauth2.py/raw\?ref\=master > $client_home/.mutt/mutt_oauth2.py
+        cp -r "${cwd}/home/.mutt" $client_home
 
-      # set up gpg key
-      gpg --gen-key
+        # set up gpg key
+        gpg --gen-key
 
-      # have user configure oauth2 for mutt
-      echo ">>>CONFIGURE mutt_oauth2.py (see https://www.redhat.com/sysadmin/mutt-email-oauth2)"
-      echo ">>>press ENTER when mutt_oauth2.py is configured with gmail"
-      read -n 1 -s  # wait for user input
-      echo ">>>INSTRUCTIONS: for the following prompt, specify in this order:\ngoogle\nauthcode\n<your email>\n\n"
-      sh $client_home/.mutt/oauth/refresh_token.sh
+        # have user configure oauth2 for mutt
+        echo ">>>CONFIGURE mutt_oauth2.py (see https://www.redhat.com/sysadmin/mutt-email-oauth2)"
+        echo ">>>press ENTER when mutt_oauth2.py is configured with gmail"
+        read -n 1 -s  # wait for user input
+        echo ">>>INSTRUCTIONS: for the following prompt, specify in this order:\ngoogle\nauthcode\n<your email>\n\n"
+        sh $client_home/.mutt/oauth/refresh_token.sh
 
     # }}}
 
@@ -395,12 +410,12 @@
 
     # LIQUIDCTL {{{
 
-    is_desktop=$(hostname | grep lavender)
-    if [ "$is_desktop" ]; then
-        echo "\t...liquidcfg"
-        systemctl enable liquidcfg.service
-        systemctl start liquidcfg.service
-    fi
+        is_desktop=$(hostname | grep lavender)
+        if [ "$is_desktop" ]; then
+            echo "\t...liquidcfg"
+            systemctl enable liquidcfg.service
+            systemctl start liquidcfg.service
+        fi
 
     # }}}
 
@@ -455,3 +470,5 @@
     # }}}
 
 # }}}
+
+exit 0
