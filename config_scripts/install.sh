@@ -212,15 +212,6 @@
     # }}}
 
 
-    # VSCODE {{{
-
-      echo "\t...vscode"
-      paru -S visual-studio-code-bin
-      sh "${config}/vscode/extensions.sh"
-
-    # }}}
-
-
     # MUSIC {{{
 
     echo "\t...spotify"
@@ -258,6 +249,19 @@
       read -n 1 -s  # wait for user input
       echo ">>>INSTRUCTIONS: for the following prompt, specify in this order:\ngoogle\nauthcode\n<your email>\n\n"
       sh $client_home/.mutt/oauth/refresh_token.sh
+
+    # }}}
+
+# }}}
+
+
+# TEXT EDITORS {{{
+
+    # VSCODE {{{
+
+      echo "\t...vscode"
+      paru -S visual-studio-code-bin
+      sh "${config}/vscode/extensions.sh"
 
     # }}}
 
