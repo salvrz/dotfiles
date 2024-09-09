@@ -257,11 +257,13 @@
 
 # TEXT EDITORS {{{
 
+    echo ">>>INSTALLING text editors"
+
     # VSCODE {{{
 
       echo "\t...vscode"
       paru -S visual-studio-code-bin
-      sh "${config}/vscode/extensions.sh"
+      sh ./vscode_extensions.sh
 
     # }}}
 
