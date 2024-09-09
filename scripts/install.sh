@@ -246,6 +246,20 @@
     # }}}
 
 
+    # QMK {{{
+
+        # reference: https://docs.qmk.fm/#/newbs_building_firmware
+        echo "\t...qmk"
+        sudo pacman -S qmk
+
+        git clone git@github.com:salvrz/qmk_firmware.git $client_home/.config/qmk_firmware
+        qmk setup -H $client_home/.config/qmk_firmware
+        qmk config user.keyboard=boardsource/unicorne
+        qmk config user.keymap=salvar_colemak_dh_matrix
+
+    # }}}
+
+
     # INTERNET {{{
 
         echo "\t...internet utils"
