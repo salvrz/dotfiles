@@ -393,6 +393,18 @@
 
     echo">>>INSTALLING system daemons"
 
+    # LIQUIDCTL {{{
+
+    is_desktop=$(hostname | grep lavender)
+    if [ "$is_desktop" ]; then
+        echo "\t...liquidcfg"
+        systemctl enable liquidcfg.service
+        systemctl start liquidcfg.service
+    fi
+
+    # }}}
+
+
     # UDISKIE {{{
 
         echo "\t...udiskie"
