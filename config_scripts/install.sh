@@ -213,6 +213,14 @@
     # }}}
 
 
+    # MUSIC {{{
+
+    echo "...spotify"
+    paru -S spotify-launcher
+
+    # }}}
+
+
     # INTERNET {{{
 
         echo "...internet utils"
