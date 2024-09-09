@@ -146,6 +146,14 @@
     # }}}
 
 
+    # DOCUMENTATION {{{
+
+        echo "...asciidoc and xmlto"
+        paru -S asciidoc xmlto
+
+    # }}}
+
+
     # INTERNET {{{
 
         echo "...internet utils"
