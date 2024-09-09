@@ -222,7 +222,7 @@
 
     # REPGREP {{{
 
-        echo "...repgrep (nvim telescope dependency)"
+        echo "\t...repgrep (nvim telescope dependency)"
         paru -S ripgrep
 
     # }}}
@@ -230,7 +230,7 @@
 
     # RANGER {{{
 
-        echo "...ranger"
+        echo "\t...ranger"
         paru -S ranger
         git clone https://github.com/alexanderjeurissen/ranger_devicons $client_home/.config/ranger/plugins/ranger_devicons
         ranger --copy-config=all
@@ -372,7 +372,7 @@
 
     # VIMPLUG {{{
 
-        echo "...vimplug"
+        echo "\t...vimplug"
         vim -c "PlugInstall"
         vim -c "CocInstall coc-json coc-tsserver"
         vim -c "CocInstall coc-rust-analyzer"
