@@ -60,6 +60,16 @@
 
     # }}}
 
+
+    # PYTHON {{{
+
+        echo "...python"
+        paru -S python python-pip ipython
+        # brew install poetry
+        pip install -U pytest
+
+    # }}}
+
 # }}}
 
 
