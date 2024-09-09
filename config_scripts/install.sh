@@ -137,6 +137,14 @@
 
     # }}}
 
+
+    # SCREEN {{{
+
+        echo "...screen"
+        paru -S screen
+
+    # }}}
+
 # }}}
 
 
