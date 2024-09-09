@@ -293,6 +293,17 @@
 
     # }}}
 
+
+    # NVIM {{{
+
+        echo "\t...nvim & vimplug"
+        paru -S neovim ueberzug xsel python-pynvim
+        sudo npm i -g yarn
+
+        curl -fLo $client_home/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    # }}}
+
 # }}}
 
 
@@ -363,6 +374,14 @@
         vim -c "PlugInstall"
         vim -c "CocInstall coc-json coc-tsserver"
         vim -c "CocInstall coc-rust-analyzer"
+
+    # }}}
+
+
+    # NVIM {{{
+
+        echo "\t...nvim vimplug"
+        nvim --headless +PlugInstall +qa
 
     # }}}
 
