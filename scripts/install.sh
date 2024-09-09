@@ -366,6 +366,23 @@
 # }}}
 
 
+# WALLPAPERS {{{
+
+    echo ">>>SETTING UP wallpapers"
+    cp "${cwd}/images/wallpaper*" $client_home/Pictures
+
+    bspwm_exists=$(which bspwm | grep bspwm)
+    if [ "$bspwm_exists" ]; then
+        echo "\t...bspwm detected, using nitrogen"
+        paru -S nitrogen
+        nitrogen --no-recurse $client_home/Pictures
+    else
+        echo "...window manager not supported"
+    fi
+
+# }}}
+
+
 # FINALIZE {{{
 
     echo ">>>FINALIZING"
