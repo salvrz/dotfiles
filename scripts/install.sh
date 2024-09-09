@@ -238,6 +238,14 @@
     # }}}
 
 
+    # LATEX {{{
+
+        echo  "\t...latex"
+        paru -S texlive-basic texlive-latex texlive-latexrecommended texlive-latexextra texlive-binextra
+
+    # }}}
+
+
     # INTERNET {{{
 
         echo "\t...internet utils"
