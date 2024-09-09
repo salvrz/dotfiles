@@ -267,6 +267,16 @@
 
     # }}}
 
+
+    # VIM {{{
+
+        echo "\t...vim & vimplug"
+        paru -S vim
+        curl -fLo $client_home/.vim/autoload/plug.vim --create-dirs \
+              https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    # }}}
+
 # }}}
 
 
@@ -323,5 +333,21 @@
 
     echo "\t...copying root"
     sudo cp -r $cwd/root/* /
+
+# }}}
+
+
+# FINALIZE {{{
+
+    echo ">>>FINALIZING"
+
+    # VIMPLUG {{{
+
+        echo "...vimplug"
+        vim -c "PlugInstall"
+        vim -c "CocInstall coc-json coc-tsserver"
+        vim -c "CocInstall coc-rust-analyzer"
+
+    # }}}
 
 # }}}
