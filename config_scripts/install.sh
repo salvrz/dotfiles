@@ -145,6 +145,14 @@
 
     # }}}
 
+
+    # INTERNET {{{
+
+        echo "...internet utils"
+        paru -S networkmanager nmtui
+
+    # }}}
+
 # }}}
 
 
