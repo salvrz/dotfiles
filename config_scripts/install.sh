@@ -153,6 +153,31 @@
 
     # }}}
 
+
+    # MUTT/NEOMUTT {{{
+
+      echo "...mutt and neomutt"
+      paru -S mutt
+      paru -S neomutt
+
+      mkdir $client_home/.mutt
+      mkdir $client_home/patch  # dir to save patches from mutt to
+
+      #curl https://gitlab.com/api/v4/projects/4815250/repository/files/contrib%2fmutt_oauth2.py/raw\?ref\=master > $client_home/.mutt/mutt_oauth2.py
+      cp -r "${cwd}/home/.mutt" $client_home
+
+      # set up gpg key
+      gpg --gen-key
+
+      # have user configure oauth2 for mutt
+      echo ">>>CONFIGURE mutt_oauth2.py (see https://www.redhat.com/sysadmin/mutt-email-oauth2)"
+      echo ">>>press ENTER when mutt_oauth2.py is configured with gmail"
+      read -n 1 -s  # wait for user input
+      echo ">>>INSTRUCTIONS: for the following prompt, specify in this order:\ngoogle\nauthcode\n<your email>\n\n"
+      sh $client_home/.mutt/oauth/refresh_token.sh
+
+    # }}}
+
 # }}}
 
 
