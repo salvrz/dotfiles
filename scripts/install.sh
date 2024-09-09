@@ -232,6 +232,8 @@
 
         echo "...ranger"
         paru -S ranger
+        git clone https://github.com/alexanderjeurissen/ranger_devicons $client_home/.config/ranger/plugins/ranger_devicons
+        ranger --copy-config=all
 
     # }}}
 
