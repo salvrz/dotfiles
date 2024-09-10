@@ -36,7 +36,6 @@ fi
 
     # NODEJS & NPM {{{
 
-        echo "\t...nodejs & npm"
         paru -S nodejs
         paru -S npm
 
@@ -45,7 +44,6 @@ fi
 
     # C {{{
 
-        echo "\t...C lang utils"
         paru -S cscope cmake llvm clang ccls
 
     # }}}
@@ -53,7 +51,6 @@ fi
 
     # RUST {{{
 
-        echo "\t...rust"
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
         # TODO this doesn't quite work, 
@@ -76,17 +73,14 @@ fi
 
     # PYTHON {{{
 
-        echo "\t...python"
-        paru -S python python-pip ipython
+        paru -S python python-pip ipython python-pytest
         # brew install poetry
-        pip install -U pytest
 
     # }}}
 
 
     # JAVA {{{
 
-        echo "\t...java"
         sudo paru -S jdk11-openjdk  # openjdk java 11
 
     # }}}
@@ -100,7 +94,6 @@ fi
 
     # AUDIO {{{
 
-        echo "\t...wireplumber"
         paru -S wireplumber
     
     # }}}
@@ -108,7 +101,6 @@ fi
 
     # UDISKIE {{{
 
-        echo "\t...udiskie"
         paru -S udiskie
 
     # }}}
@@ -122,7 +114,6 @@ fi
 
     # BSPWM {{{
 
-        echo "\t...bspwm"
         paru -S --needed bspwm sxhkd polybar
         git clone https://github.com/EndeavourOS-Community-Editions/bspwm.git
         cd bspwm
@@ -134,7 +125,6 @@ fi
 
     # DIRENV {{{
 
-        echo "\t...direnv"
         paru -S direnv
 
     # }}}
@@ -142,7 +132,6 @@ fi
 
     # ZSH {{{
 
-        echo "\t...pure (zsh)"
         paru -S zsh
         sudo usermod --shell $(which zsh) "$1"
         mkdir -p $client_home/.zsh
@@ -153,7 +142,6 @@ fi
 
     # ALACRITTY {{{
 
-        echo "\t...alacritty"
         paru -S alacritty
 
     # }}}
@@ -161,11 +149,7 @@ fi
 
     # GIT CREDENTIALS {{{
 
-        echo "\t...git credential management"
-        paru -S gnupg
-        paru -S pinentry  # gnupg uses for password prompt
-        paru -S pass
-        paru -S git-credential-manager-core
+        paru -S gnupg pinentry pass git-credential-manager-core
         cpan Authen::SASL MIME::Base64 Net::SMTP::SSL
 
         # FOR UBUNTU: install gcm via tarball from github
@@ -174,9 +158,9 @@ fi
         cp "${cwd}/home/.config/.gitconfig" $client_home/.gitconfig
         git-credential-manager configure
 
+        gpg --gen-key
         echo ">>>UPDATE run \`pass init <gpg-id>\` with the gpg id generated bellow. Press enter when you're done."
         echo ">>>HINT use the key-code after the \'pub\' identifier for the id."
-        gpg --gen-key
         read -n 1 -s  # wait for user input
         # user should run pass init <gpg-id> here
 
@@ -192,73 +176,17 @@ fi
     # }}}
 
 
-    # SCREEN {{{
+    # GENERIC SOFTWARE {{{
 
-        echo "\t...screen"
-        paru -S screen
+        paru -S screen asciidoc xmlto qalculate-gtk htop bottom discord \
+            slack-desktop spotify-launcher ripgrep networkmanager nmtui \
 
-    # }}}
-
-
-    # DOCUMENTATION {{{
-
-        echo "\t...asciidoc and xmlto"
-        paru -S asciidoc xmlto
-
-    # }}}
-
-
-    # QALCULATE! {{{
-
-        echo "\t...qualculate"
-        paru -S qalculate-gtk
-
-    # }}}
-
-
-    # HTOP {{{
-
-        echo "\t...htop"
-        paru -S htop
-
-    # }}}
-
-
-    # BOTTOM {{{
-
-        echo "\t...bottom"
-        paru -S bottom
-
-    # }}}
-
-
-    # MESSAGING {{{
-
-        echo "\t...messaging apps (discord, etc.)"
-        paru -S discord slack-desktop
-
-    # }}}
-
-
-    # MUSIC {{{
-
-        echo "\t...spotify"
-        paru -S spotify-launcher
-
-    # }}}
-
-
-    # REPGREP {{{
-
-        echo "\t...repgrep (nvim telescope dependency)"
-        paru -S ripgrep
 
     # }}}
 
 
     # RANGER {{{
 
-        echo "\t...ranger"
         paru -S ranger
         git clone https://github.com/alexanderjeurissen/ranger_devicons $client_home/.config/ranger/plugins/ranger_devicons
         ranger --copy-config=all
@@ -268,7 +196,6 @@ fi
 
     # LATEX {{{
 
-        echo  "\t...latex"
         paru -S texlive-basic texlive-latex texlive-latexrecommended texlive-latexextra texlive-binextra
 
     # }}}
@@ -277,7 +204,6 @@ fi
     # QMK {{{
 
         # reference: https://docs.qmk.fm/#/newbs_building_firmware
-        echo "\t...qmk"
         sudo pacman -S qmk
 
         git clone git@github.com:salvrz/qmk_firmware.git $client_home/.config/qmk_firmware
@@ -288,17 +214,8 @@ fi
     # }}}
 
 
-    # INTERNET {{{
-
-        echo "\t...internet utils"
-        paru -S networkmanager nmtui
-
-    # }}}
-
-
     # MUTT/NEOMUTT {{{
 
-        echo "\t...mutt and neomutt"
         paru -S mutt
         paru -S neomutt
 
@@ -326,11 +243,10 @@ fi
 # TEXT EDITORS {{{
 
     echo ">>>INSTALLING text editors"
+        paru -S visual-studio-code-bin vim neovim ueberzug xsel python-pynvim
 
     # VSCODE {{{
 
-        echo "\t...vscode"
-        paru -S visual-studio-code-bin
         sh $cwd/scripts/vscode_extensions.sh
 
     # }}}
@@ -338,8 +254,6 @@ fi
 
     # VIM {{{
 
-        echo "\t...vim & vimplug"
-        paru -S vim
         curl -fLo $client_home/.vim/autoload/plug.vim --create-dirs \
               https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -348,10 +262,7 @@ fi
 
     # NVIM {{{
 
-        echo "\t...nvim & vimplug"
-        paru -S neovim ueberzug xsel python-pynvim
         sudo npm i -g yarn
-
         curl -fLo $client_home/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     # }}}
@@ -362,9 +273,6 @@ fi
 # FONTS {{{
 
     echo ">>>INSTALLING fonts"
-    echo"\t...IBM Plex Mono"
-    echo"\t...NERDFont Blex"
-    echo"\t...Font Awesome"
     # prep dirs
     sudo mkdir -p /usr/local/share/fonts
     sudo mkdir -p /usr/share/fonts/opentype
@@ -407,10 +315,10 @@ fi
 
     echo ">>>COPYING dotfiles"
 
-    echo "\t...copying ${1}'s home dir"
+    echo -e "\t...copying ${1}'s home dir"
     cp -r $cwd/home/* $client_home
 
-    echo "\t...copying root"
+    echo -e "\t...copying root"
     sudo cp -r $cwd/root/* /
 
 # }}}
@@ -424,7 +332,6 @@ fi
 
         is_desktop=$(hostname | grep lavender)
         if [ "$is_desktop" ]; then
-            echo "\t...liquidcfg"
             systemctl enable liquidcfg.service
             systemctl start liquidcfg.service
         fi
@@ -434,7 +341,6 @@ fi
 
     # UDISKIE {{{
 
-        echo "\t...udiskie"
         systemctl enable --user udiskie-lifesupport.service
         systemctl start --user udiskie-lifesupport.service
 
@@ -450,11 +356,11 @@ fi
 
     bspwm_exists=$(which bspwm | grep bspwm)
     if [ "$bspwm_exists" ]; then
-        echo "\t...bspwm detected, using nitrogen"
+        echo -e "\t...bspwm detected, using nitrogen"
         paru -S nitrogen
         nitrogen --no-recurse $client_home/Pictures
     else
-        echo "...window manager not supported"
+        echo -e "...window manager not supported"
     fi
 
 # }}}
@@ -466,7 +372,6 @@ fi
 
     # VIMPLUG {{{
 
-        echo "\t...vimplug"
         vim -c "PlugInstall"
         vim -c "CocInstall coc-json coc-tsserver"
         vim -c "CocInstall coc-rust-analyzer"
@@ -476,7 +381,6 @@ fi
 
     # NVIM {{{
 
-        echo "\t...nvim vimplug"
         nvim --headless +PlugInstall +qa
 
     # }}}
