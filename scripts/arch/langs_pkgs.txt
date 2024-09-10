@@ -1,0 +1,13 @@
+cscope
+cmake
+llvm
+clang
+ccls
+python
+python-pip
+ipython
+python-pytest
+nodejs
+npm
+jdk11-openjdk
+perl

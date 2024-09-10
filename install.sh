@@ -13,7 +13,7 @@ distro=$(grep "ID_LIKE=" /etc/os-release)
 
 if echo $distro | grep arch; then ## arch based distros
     echo ">>>LOGGING TO out.txt"
-    ./scripts/install.sh "$1" | tee -a out.txt
+    sh scripts/arch/install.sh "$1" | tee -a out.txt
 
 else  # unsupported distro
     echo $distro
