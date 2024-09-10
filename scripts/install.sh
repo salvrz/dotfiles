@@ -120,6 +120,18 @@ fi
 
     echo ">>>INSTALLING personal software"
 
+    # BSPWM {{{
+
+        echo "\t...bspwm"
+        paru -S --needed bspwm sxhkd polybar
+        git clone https://github.com/EndeavourOS-Community-Editions/bspwm.git
+        cd bspwm
+        bash bspwm-install.sh
+        cd $cwd
+
+    # }}}
+
+
     # DIRENV {{{
 
         echo "\t...direnv"
