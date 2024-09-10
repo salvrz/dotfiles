@@ -316,10 +316,10 @@ fi
     echo ">>>COPYING dotfiles"
 
     echo -e "\t...copying ${1}'s home dir"
-    cp -r $cwd/home/* $client_home
+    cp -r $cwd/home/. $client_home
 
     echo -e "\t...copying root"
-    sudo cp -r $cwd/root/* /
+    sudo cp -r $cwd/root/. /
 
 # }}}
 
