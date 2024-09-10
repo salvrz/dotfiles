@@ -3,8 +3,8 @@
 # ensure admin username provided
 echo $#
 if [[ $# -lt 1 ]]; then
-  echo "Usage: sh install.sh [ADMIN_USERNAME]"
-  exit 1
+    echo "Usage: sh install.sh [ADMIN_USERNAME]"
+    exit 1
 fi
 
 # determine distro
@@ -12,13 +12,13 @@ fi
 distro=$(grep "ID_LIKE=" /etc/os-release)
 
 if echo $distro | grep arch; then ## arch based distros
-  echo ">>>LOGGING TO out.txt"
-  ./config_scripts/install.sh "$1" | tee -a out.txt
+    echo ">>>LOGGING TO out.txt"
+    ./scripts/install.sh "$1" | tee -a out.txt
 
 else  # unsupported distro
-  echo $distro
-  echo ">>>UNSUPPORTED DISTRO TYPE"
-  exit 1
+    echo $distro
+    echo ">>>UNSUPPORTED DISTRO TYPE"
+    exit 1
 fi
 
 exit 0
