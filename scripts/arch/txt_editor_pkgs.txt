@@ -1,6 +1,6 @@
 visual-studio-code-bin
 vim
 neovim
-uberzug
+ueberzug
 xel
 python-pynvim
