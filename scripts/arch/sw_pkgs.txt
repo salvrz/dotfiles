@@ -5,7 +5,7 @@ direnv
 zsh
 alacritty
 gnupg
-pinetry
+pinentry
 pass
 git-credential-manager-core
 screen
