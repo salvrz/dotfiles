@@ -1,8 +1,8 @@
 # my ignores
-\install.sh
-\scripts
-\images
-\root
+install.sh
+scripts
+images
+root
 
 # stow defaults
 
