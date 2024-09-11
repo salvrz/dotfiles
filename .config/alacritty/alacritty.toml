@@ -1,0 +1,59 @@
+[colors.bright]
+black = "#928374"
+blue = "#83A598"
+cyan = "#B8BB26"
+green = "#D3869B"
+magenta = "#FE8019"
+red = "#FB4934"
+white = "#8EC07C"
+yellow = "#FABD2F"
+
+[colors.normal]
+black = "#0D0D0D"
+blue = "#458588"
+cyan = "#FABD2F"
+green = "#689D6A"
+magenta = "#83A598"
+red = "#D65D0E"
+white = "#EBDBB2"
+yellow = "#CC241D"
+
+[colors.primary]
+background = "#0D0D0D"
+foreground = "#EBDBB2"
+
+[cursor.style]
+shape = "Underline"
+
+[font]
+size = 11
+
+[font.bold]
+family = "IBMPlexMono"
+style = "Bold"
+
+[font.bold_italic]
+family = "IBMPlexMono"
+style = "Bold Italic"
+
+[font.italic]
+family = "IBMPlexMono"
+style = "Italic"
+
+[font.normal]
+family = "IBMPlexMono"
+style = "Regular"
+
+[scrolling]
+history = 10000
+
+[window]
+decorations = "none"
+
+[window.dimensions]
+columns = 70
+lines = 22
+
+[window.padding]
+x = 15
+y = 15

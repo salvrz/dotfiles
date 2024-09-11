@@ -1,0 +1,6 @@
+visual-studio-code-bin
+vim
+neovim
+uberzug
+xel
+python-pynvim

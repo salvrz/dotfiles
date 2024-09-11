@@ -2,6 +2,9 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# Polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width         2
@@ -33,17 +36,16 @@ bspc config active_border_color         "#073642"
 # Set display from arandr saved script
 sh ~/.screenlayout/monitor.sh &
 # Bar
-~/.config/polybar/launch.sh --hack &
+~/.config/polybar/launch.sh --grayblocks &
 # Notifications
 /usr/bin/dunst &
-# Polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 # Wallpaper
 nitrogen --restore &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 # Picom
-picom -b &
+# picom -b &
 # Network Applet
 nm-applet --indicator &
 
@@ -51,5 +53,12 @@ nm-applet --indicator &
 xsetroot -cursor_name left_ptr &
 
 # Low battery notifier
-~/.config/bspwm/scripts/low_bat_notifier.sh
+~/.config/bspwm/scripts/low_bat_notifier.sh &
 
+# Set peripheral settings
+# xrandr --output DisplayPort-0 --mode 1920x1080 --rate 164.96 &
+# xinput set-prop 9 'libinput Accel Speed' 0 &
+# xinput set-prop 9 'libinput Accel Profile Enabled' 0 1 0 &
+
+# System monitor
+exec alacritty -e btm

@@ -1,0 +1,10 @@
+[Unit]
+Description=AIO startup service
+
+[Service]
+Type=oneshot
+ExecStart=liquidctl initialize
+ExecStart=liquidctl set sync color fading 4c04f4 a004f4 4304f4 8404f4 --speed slower
+
+[Install]
+WantedBy=default.target
