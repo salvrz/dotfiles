@@ -87,7 +87,7 @@ client_home=/home/$1
     # dotfile repo (which would happen if .config/nvim was a symlink)
     mkdir -p $client_home/.config/nvim
 
-    stow --adopt .
+    stow --adopt enos
     git restore .
 
     ln -s root/etc/pulse /etc
