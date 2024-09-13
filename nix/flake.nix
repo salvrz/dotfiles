@@ -22,16 +22,16 @@
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.home-manager
-	  {
-	    home-manager = {
-	      useUserPackages = true;
-	      useGlobalPkgs = true;
-	      extraSpecialArgs = { inherit inputs; };
-	      users = {
-	        salvrz = import ./home.nix;
+          {
+            home-manager = {
+              useUserPackages = true;
+              useGlobalPkgs = true;
+              extraSpecialArgs = { inherit inputs; };
+              users = {
+                salvrz = import ./home.nix;
               };
-	    };
-	  }
+            };
+          }
         ];
       };
     };
