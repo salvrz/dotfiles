@@ -11,7 +11,7 @@ vim.opt.iskeyword:append { '-' }        -- Treat dash separated words as a word 
 vim.opt.fileencoding    = "utf-8"       -- Encoding written to a file
 vim.opt.splitbelow      = true          -- Horizontal splits will automatically be below
 vim.opt.splitright      = true          -- Vertical splits will automatically be to the right
-vim.o.noshowmode        = true          -- Don't display mode (eg INSERT)
+vim.opt.showmode        = false         -- Don't display mode (eg INSERT)
 vim.opt.clipboard       = "unnamedplus" -- Copy paste between vim and everything else
 vim.opt.updatetime      = 300           -- Faster completion
 vim.opt.timeoutlen      = 500           -- Default timeoutlen is 1000 ms
