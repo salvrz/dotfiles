@@ -14,11 +14,18 @@
       lib = nixpkgs.lib;
     in
     {
-      nixosConfigurations.default = inputs.nixpkgs.lib.nixosSystem {
+      nixosConfigurations.huckleberry = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
         modules = [
-          ./configuration.nix
-          inputs.home-manager.nixosModules.default
+          ./hosts/huckleberry/hardware-configuration.nix
+          ./modules/config/configuration.nix
+        ];
+      };
+      nixosConfigurations.lavender = inputs.nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs system; };
+        modules = [
+          ./hosts/lavender/hardware-configuration.nix
+          ./modules/config/configuration.nix
         ];
       };
     };
