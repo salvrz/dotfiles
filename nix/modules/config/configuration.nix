@@ -93,7 +93,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "salvrz" = import ../modules/home-manager/home.nix;
+      "salvrz" = import ../home-manager/home.nix;
     };
   };
 
