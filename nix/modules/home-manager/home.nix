@@ -91,8 +91,7 @@
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
-
-  }
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
