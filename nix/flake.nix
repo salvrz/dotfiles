@@ -17,6 +17,7 @@
       nixosConfigurations.huckleberry = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
         modules = [
+          { networking.hostName = "huckleberry"; }
           ./hosts/huckleberry/hardware-configuration.nix
           ./modules/config/configuration.nix
         ];
@@ -24,6 +25,7 @@
       nixosConfigurations.lavender = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
         modules = [
+          { networking.hostName = "lavender"; }
           ./hosts/lavender/hardware-configuration.nix
           ./modules/config/configuration.nix
         ];

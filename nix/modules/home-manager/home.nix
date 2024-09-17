@@ -77,6 +77,23 @@
     # EDITOR = "emacs";
   };
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -la";
+      update = "sudo nixos-rebuild switch --flake \"$(readlink -f /home/salvrz/.nix)\"#$HOSTNAME";
+    };
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
+
+  }
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
