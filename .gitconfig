@@ -2,47 +2,49 @@
 # User config
 #
 [user]
-	name	= Stevie Alvarez
-	email	= stevie.6strings@gmail.com
+    name    = Stevie Alvarez
+    email   = stevie.6strings@gmail.com
 [credential]
-	helper = 
-	helper		= /usr/bin/git-credential-manager
-	credentialStore = gpg
+    helper          = /usr/bin/git-credential-manager
+    credentialStore = gpg
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+    useHttpPath = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [core]
-	editor = nvim
+    editor = nvim
 
 #
 # Email config
 #
 [sendemail]
-	smtpserver		= smtp.gmail.com
-	smtpserverport		= 587
-	smtpencryption		= tls
-	from			= Stevie Alvarez <stevie.6strings@gmail.com>
-	smtpuser		= stevie.6strings@gmail.com
-	# smtppass		= <retrieved via credential manager>
-	confirm			= always
+    smtpserver          = smtp.gmail.com
+    smtpserverport      = 587
+    smtpencryption      = tls
+    from            = Stevie Alvarez <stevie.6strings@gmail.com>
+    smtpuser        = stevie.6strings@gmail.com
+    # smtppass      = <retrieved via credential manager>
+    confirm         = always
 [http]
-	sslAutoClientCert	= true
+    sslAutoClientCert   = true
 
 #
 # Workflow config
 #
 [merge]
-	# git mergetool
-	tool	= vimdiff
+    # git mergetool
+    tool    = vimdiff
 [rebase]
-	# auto relocate squash to respective commit to squash to
-	autoSquash	= true
+    # auto relocate squash to respective commit to squash to
+    autoSquash  = true
 [alias]
-	# Simple commit history
-	l	= log --oneline --decorate -30
-	ll	= log --oneline --decorate
-	lt	= log --all --graph --decorate --oneline
+    # Simple commit history
+    l   = log --oneline --decorate -30
+    ll  = log --oneline --decorate
+    lt  = log --all --graph --decorate --oneline
 
-	# commit signed
-	cs	= commit -s
+    # commit signed
+    cs  = commit -s
+
+    # check whitespace and commit
+    cw  = "!if git diff --check; then git add . && git commit; fi"
