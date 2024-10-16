@@ -42,3 +42,8 @@ vim.keymap.set('v', '>', '>gv')
 -- Spell check (alt + s)
 --
 vim.keymap.set('n', '<M-s>', ':setlocal spell!<CR>')
+
+--
+-- Diagnostics
+--
+vim.keymap.set('n', '<space>d', "<cmd> lua vim.diagnostic.open_float() <CR>")
