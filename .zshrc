@@ -25,12 +25,18 @@
 # KEYBINDINGS {{{
 
     bindkey -e  # Use emacs keybindings even if our EDITOR is set to vi
+
+    # qwerty keyboard keybinds
     bindkey "^[h" backward-word
     bindkey "^]l" forward-word
     bindkey "^h" backward-char
     bindkey "^l" forward-char
+
+    # colemak DH keyboard keybinds
     bindkey "^[[1;5C" forward-word
     bindkey "^[[1;5D" backward-word
+    bindkey "^m" backward-char
+    bindkey "^i" forward-char
 
 # }}}
 
