@@ -281,4 +281,8 @@ client_home=/home/$1
 
 # }}}
 
+echo ">>>IMPORTANT update kernel parameters (if needed) for mouse jumping...\n"
+echo "How to update kernel params (/etc/kernel/cmdline or /efi/loader/entries): https://discovery.endeavouros.com/installation/systemd-boot/2022/12/\n"
+echo "How to fix cursor jump (add `i8042.nomux=1` to params): https://wiki.archlinux.org/title/Touchpad_Synaptics#Cursor_jump"
+
 exit 0
