@@ -238,4 +238,4 @@ bindsym $mod+r mode "resize"
 #
 # Keybindings List
 #
-	bindsym $mod+t exec xed ~/.config/sway/cheatsheet
+	bindsym $mod+t exec alacritty -e nvim ~/.config/sway/cheatsheet
