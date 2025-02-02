@@ -7,6 +7,7 @@ python
 python-pip
 ipython
 python-pytest
+pyright
 nodejs
 npm
 jdk11-openjdk
