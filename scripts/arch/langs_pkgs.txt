@@ -12,3 +12,4 @@ nodejs
 npm
 jdk11-openjdk
 perl
+luarocks
