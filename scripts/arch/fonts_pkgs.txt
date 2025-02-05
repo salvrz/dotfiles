@@ -1,0 +1,2 @@
+ttf-ibmplex-mono-nerd
+ttf-fantasque-nerd
