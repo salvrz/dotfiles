@@ -26,6 +26,7 @@ texlive-latex
 texlive-latexrecommended
 texlive-latexextra
 texlive-binextra
+texlive-mathscience
 qmk
 mutt
 neomutt
