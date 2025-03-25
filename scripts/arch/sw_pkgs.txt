@@ -1,6 +1,9 @@
 bspwm
 sxhkd
 polybar
+hyprland
+hyprpaper
+rofi
 direnv
 zsh
 alacritty
