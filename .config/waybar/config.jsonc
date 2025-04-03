@@ -1,0 +1,108 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin": "10",
+    "modules-left": ["hyprland/workspaces", "sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "cpu", "memory", "disk", "pulseaudio", "battery", "network", "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "hyprctl dispatch workspace {id}",
+        "format-icons": {
+            "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+        }
+    },
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+        }
+    },
+
+    "clock": {
+        "format": "{:%H:%M :: %a}",
+        "format-alt": "{:%Y-%m-%d}",
+        //"tooltip-format": "CAL {:%A, %B %d, %Y}\n🕒 {:%H:%M:%S}",
+    },
+
+    "cpu": {
+        "format": "CPU {usage}%",
+            "states": {
+                "warning": 70,
+                "critical": 90,
+            },
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "MEM {used:0.2f}GB",
+        "interval": 10,
+        "states": {
+            "warning": 70,
+            "critical": 90,
+        },
+        "tooltip": false,
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "SYS {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "unit": "GB",
+        "tooltip-format": "Available {free} of {total}",
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format": "{icon} {volume}% {format_source}",
+        "format-muted": " {format_source}",
+        "format-bluetooth": "{icon}  {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-source": "   {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "WIFI {essid} ({signalStrength}%) {bandwidthTotalBits}",
+        "format-ethernet": "ETH0 {bandwidthTotalBits}",
+        "format-disconnected": "Disconnected",
+        "on-click": "alacritty -e 'nmtui'",
+        "tooltip": false,
+    },
+
+    "custom/power": {
+        "format":"[~]",
+        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false,
+    },
+}
