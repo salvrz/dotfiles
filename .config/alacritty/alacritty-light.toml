@@ -9,7 +9,7 @@ white = "#F2E5BC" # dark cream
 yellow = "#B57614" # dark yellow
 
 [colors.normal]
-black = "#0D0D0D" # off-black
+black = "#0A0A0A" # off-black
 blue = "#458588" # blue
 cyan = "#689D6A" # aqua
 green = "#98971A" # green
@@ -20,7 +20,7 @@ yellow = "#D79921" # yellow
 
 [colors.primary]
 background = "#F9F5D7" # cream
-foreground = "#0D0D0D" # off-black
+foreground = "#0A0A0A" # off-black
 
 [cursor.style]
 shape = "Underline"
