@@ -36,7 +36,8 @@ client_home=/home/$1
 
         echo -e "\n\n>>>INSTALLING software\n"
         paru -S < $pkgs/langs_pkgs.txt < $pkgs/sys_sw_pkgs.txt \
-                < $pkgs/sw_pkgs.txt < $pkgs/txt_editor_pkgs.txt
+                < $pkgs/sw_pkgs.txt < $pkgs/txt_editor_pkgs.txt \
+                < $pkgs/fonts_pkgs.txt
 
         # git credential manager (email git patches)
         cpan Authen::SASL MIME::Base64 Net::SMTP::SSL
@@ -126,27 +127,21 @@ client_home=/home/$1
 
     echo -e "\n\n>>>INSTALLING fonts\n"
     # prep dirs
-    sudo mkdir -p /usr/local/share/fonts
     sudo mkdir -p /usr/share/fonts/opentype
 
     # fetch fonts
-    curl -fsLO --output-dir ./downloads/ --create-dirs https://github.com/IBM/plex/releases/download/v6.0.0/TrueType.zip
     curl -fsLO --output-dir ./downloads/ --create-dirs https://use.fontawesome.com/releases/v6.2.0/fontawesome-free-6.2.0-desktop.zip
 
     cd ./downloads
 
     # unzip fonts
-    unzip TrueType.zip
     unzip fontawesome-free-6.2.0-desktop.zip
 
     # remove zips/conflicting fonts
-    rm TrueType.zip
     rm fontawesome-free-6.2.0-desktop.zip
 
     # download fonts
-    sudo mv ./TrueType/IBM-Plex-Mono/*.ttf /usr/local/share/fonts/
     sudo mv ./fontawesome-free-6.2.0-desktop/otfs/* /usr/share/fonts/opentype/
-    rm -rf TrueType/
     rm -rf fontawesome-free-6.2.0-desktop/
 
     # cleanup
