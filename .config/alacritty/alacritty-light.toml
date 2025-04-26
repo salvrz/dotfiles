@@ -28,37 +28,37 @@ shape = "Underline"
 [font]
 size = 11
 
-[font.bold]
-family = "CommitMono"
-style = "Bold"
-
-[font.bold_italic]
-family = "CommitMono"
-style = "Bold Italic"
-
-[font.italic]
-family = "CommitMono"
-style = "Italic"
-
-[font.normal]
-family = "CommitMono"
-style = "Regular"
-
 #[font.bold]
-#family = "IBMPlexMono"
+#family = "CommitMono"
 #style = "Bold"
 #
 #[font.bold_italic]
-#family = "IBMPlexMono"
+#family = "CommitMono"
 #style = "Bold Italic"
 #
 #[font.italic]
-#family = "IBMPlexMono"
+#family = "CommitMono"
 #style = "Italic"
 #
 #[font.normal]
-#family = "IBMPlexMono"
+#family = "CommitMono"
 #style = "Regular"
+
+[font.bold]
+family = "IBMPlexMono"
+style = "Bold"
+
+[font.bold_italic]
+family = "IBMPlexMono"
+style = "Bold Italic"
+
+[font.italic]
+family = "IBMPlexMono"
+style = "Italic"
+
+[font.normal]
+family = "IBMPlexMono"
+style = "Regular"
 
 [scrolling]
 history = 10000
