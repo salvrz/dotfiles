@@ -1,0 +1,2 @@
+[global-dns-domain-*]
+servers = 192.168.1.2, 192.168.1.3
