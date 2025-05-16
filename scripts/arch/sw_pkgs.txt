@@ -3,7 +3,7 @@ sxhkd
 polybar
 hyprland
 hyprpaper
-rofi
+rofi-wayland
 direnv
 zsh
 alacritty
