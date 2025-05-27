@@ -43,8 +43,15 @@
     ll  = log --oneline --decorate
     lt  = log --all --graph --decorate --oneline
 
+    # Check for whitespace e.g. git diff --check HEAD~1
+    ws  = diff --check
+
     # commit signed
     cs  = commit -s
 
     # check whitespace and commit
     cw  = "!if git diff --check; then git add . && git commit; fi"
+
+    # Interactive rebase
+    ri  = rebase -i
+    rim = rebase -i master
