@@ -1,0 +1,11 @@
+[Unit]
+Description=Actual-Server (https://actualbudget.org)
+After=network.target
+
+[Service]
+WorkingDirectory=/home/salvar/programs/actual
+ExecStart=/usr/bin/yarn start:server
+Restart=on-watchdog
+
+[Install]
+WantedBy=multi-user.target

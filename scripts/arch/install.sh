@@ -12,6 +12,9 @@ scripts=$cwd/scripts
 pkgs=$scripts/arch
 client_home=/home/$1
 
+# create local programs directory
+mkdir $client_home/programs
+
 
 # SETUP {{{
 
@@ -74,6 +77,31 @@ client_home=/home/$1
         #git clone https://github.com/rust-lang/rust-analyzer.git
         #cd rust-analyzer
         #cargo xtask install
+
+    # }}}
+
+
+    # ACTUAL BUDGET {{{
+
+        cd $client_home/programs
+        git clone https://github.com/actualbudget/actual.git
+        cd actual
+        yarn install
+        yarn config set --home enableTelemetry 0
+        yarn build:server
+
+        # set up systemd daemon
+        cd /etc/systemd/system/multi-user.target.wants
+        sudo ln -s /home/salvar/dotfiles/root/etc/systemd/system/multi-user.target.wants/actual-server.service
+        echo ">>>RESTARTING SYSTEMD for actualbudget"
+        sudo systemctl daemon-reload
+        # install and start systemd unit file
+        sudo systemctl enable --now /etc/systemd/system/multi-user.target.wants/actual-server.service
+        echo ">>>PAUSING to confirm actualbudget server is running"
+        systemctl status actual-server
+        read -n 1 -s  # wait for user input
+
+        cd $cwd
 
     # }}}
 
