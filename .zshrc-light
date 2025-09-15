@@ -92,8 +92,8 @@
 
 # ALIASES {{{
 
-    alias ls="ls --color=auto"
-    alias ll="ls -alF"
+    alias ls="ls -CF --color=auto"
+    alias ll="ls -CalF"
     alias l="ls -CF"
     alias mutttoken="sh ~/.mutt/oauth/refresh_token.sh"
     alias nmutt="neomutt"
