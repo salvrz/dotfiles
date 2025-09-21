@@ -13,6 +13,7 @@ function fish_prompt
 
     set -g __fish_git_prompt_char_upstream_ahead "↑"
     set -g __fish_git_prompt_char_upstream_behind "↓"
+    # set -g __fish_git_prompt_char_upstream_diverged "↓↑"
     set -g __fish_git_prompt_char_dirtystate "*"
     set -g __fish_git_prompt_char_stagedstate "+"
     set -g __fish_git_prompt_char_invalidstate "#"
