@@ -19,10 +19,10 @@ function fish_prompt
     set -g __fish_git_prompt_char_invalidstate "#"
 
     # Input prompt
-    set -l my_input_prompt ':// '(set_color normal)
+    set -l my_input_prompt (set_color --bold brblue) ':// ' (set_color normal)
 
     # Build prompt
     # TODO: color
-    string join '' -- (prompt_login) ' ' (prompt_pwd --full-length-dirs 2) (fish_vcs_prompt) ' ' $stat \n $my_input_prompt
+    string join '' --  (set_color brpurple) (prompt_pwd --full-length-dirs 2) (set_color normal) (fish_vcs_prompt) ' ' $stat \n $my_input_prompt
 
 end
