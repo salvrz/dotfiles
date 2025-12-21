@@ -5,7 +5,7 @@ cyan = "#427B58" # dark aqua
 green = "#79740E" # dark green
 magenta = "#8F3F71" # dark purple
 red = "#9D0006" # dark red
-white = "#F2E5BC" # dark cream
+white = "#FBFBEF" # dark cream
 yellow = "#B57614" # dark yellow
 
 [colors.normal]
@@ -15,11 +15,11 @@ cyan = "#689D6A" # aqua
 green = "#98971A" # green
 magenta = "#B16286" # purple
 red = "#CC241D" # red
-white = "#F9F5D7" # cream
+white = "#FBFBEF" # cream
 yellow = "#D79921" # yellow
 
 [colors.primary]
-background = "#F9F5D7" # cream
+background = "#FBFBEF" # cream
 foreground = "#0A0A0A" # off-black
 
 [cursor.style]
