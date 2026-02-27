@@ -1,32 +1,16 @@
 #
-# User config
+# Machine / Workspace config
 #
-[user]
-    name    = Stevie Alvarez
-    email   = stevie.6strings@gmail.com
-[credential]
-    helper          = /usr/bin/git-credential-manager
-    credentialStore = gpg
-[credential "https://dev.azure.com"]
-    useHttpPath = true
+[include]
+    path = ~/.local/git.config
+
+#
+# General config
+#
 [init]
     defaultBranch = main
 [core]
     editor = nvim
-
-#
-# Email config
-#
-[sendemail]
-    smtpserver          = smtp.gmail.com
-    smtpserverport      = 587
-    smtpencryption      = tls
-    from            = Stevie Alvarez <stevie.6strings@gmail.com>
-    smtpuser        = stevie.6strings@gmail.com
-    # smtppass      = <retrieved via credential manager>
-    confirm         = always
-[http]
-    sslAutoClientCert   = true
 
 #
 # Workflow config
