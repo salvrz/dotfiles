@@ -19,7 +19,7 @@ white = "#FBFBEF" # cream
 yellow = "#D79921" # yellow
 
 [colors.primary]
-background = "#FBFBEF" # cream
+background = "#FCFCFC" # cream
 foreground = "#0A0A0A" # off-black
 
 [cursor.style]
